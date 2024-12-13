@@ -40,6 +40,7 @@ if (app) {
     </p>
   </div>
   <h2>We're live!</h2>
+  <p> hello world</p>
   `;
 }
 

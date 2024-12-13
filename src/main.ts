@@ -39,6 +39,7 @@ if (app) {
       Click on the Vite and TypeScript logos to learn more
     </p>
   </div>
+  <h2>We're live!</h2>
   `;
 }
 

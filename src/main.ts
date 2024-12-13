@@ -41,6 +41,7 @@ if (app) {
   </div>
   <h2>We're live!</h2>
   <p> hello world</p>
+  <span> hej från jenny</span>
   `;
 }
 

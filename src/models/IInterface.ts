@@ -4,7 +4,7 @@ export interface IAnswerOption {
 }
 
 export interface IQuizQuestion {
-  id: number,
+  id: number;
   questionText: string;
   codeExample?: string;
   answer1: IAnswerOption;
@@ -85,9 +85,21 @@ value = 42;`,
   {
     id: 8,
     questionText: 'Vad är skillnaden mellan en dependency och en devDependency i ett Node.js-projekt?',
-    answer1: { optionText: 'Dependencies är paket som behövs för att köra applikationen, medan devDependencies används för utvecklingsverktyg och tester.', isCorrect: true },
-    answer2: { optionText: 'Dependencies används endast i produktionsmiljöer, medan devDependencies används enbart i utvecklingsmiljöer.', isCorrect: false },
-    answer3: { optionText: 'devDependencies installeras automatiskt om du kör `npm install`, medan dependencies måste installeras manuellt.', isCorrect: false }
+    answer1: {
+      optionText:
+        'Dependencies är paket som behövs för att köra applikationen, medan devDependencies används för utvecklingsverktyg och tester.',
+      isCorrect: true,
+    },
+    answer2: {
+      optionText:
+        'Dependencies används endast i produktionsmiljöer, medan devDependencies används enbart i utvecklingsmiljöer.',
+      isCorrect: false,
+    },
+    answer3: {
+      optionText:
+        'devDependencies installeras automatiskt om du kör `npm install`, medan dependencies måste installeras manuellt.',
+      isCorrect: false,
+    },
   },
   {
     id: 9,

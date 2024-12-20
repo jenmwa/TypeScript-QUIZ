@@ -27,8 +27,8 @@ body {
   min-width: 320px;
   min-height: 100vh;
   h1 {
-    text-align: center;
-  }
+  text-align: center;
+}
 }
 
 h1 {
@@ -36,13 +36,34 @@ h1 {
   line-height: 1.1;
 }
 
+button {
+    border-radius: 8px;
+    border: 1px solid transparent;
+    padding: 0.6em 1.2em;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: inherit;
+    background-color: #d6d3d3;
+    cursor: pointer;
+    transition: border-color 0.25s;
+  }
+  button:hover {
+    border-color: #646cff;
+    background-color: #eaeaea;
+  }
+  button:focus,
+  button:focus-visible {
+    outline: 4px auto -webkit-focus-ring-color;
+  }
+
 .quiz-container {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
-
   outline: 1px solid red;
 }
+
+
 
 //*
 *
@@ -53,9 +74,12 @@ h1 {
   margin: 2rem;
 }
 
+
 .answer-container {
-  display: flex;
-  flex-direction: column;
+display: flex;
+flex-direction: column;
+
+
 }
 
 //fixa mediaqueries
@@ -67,16 +91,19 @@ h1 {
     display: flex;
     align-items: center;
   }
+
+  
 }
 
 pre {
   margin-inline: 1rem;
-  background-color: #f4f4f4;
+  background-color: #f4f4f4; 
   color: slategray;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-  font-family: 'Courier New', Courier, monospace;
-  white-space: pre-wrap;
-  word-wrap: break-word;
-  overflow-x: auto;
+  padding: 0.5rem 1rem; 
+  border-radius: 4px; 
+  font-family: 'Courier New', Courier, monospace;  
+  white-space: pre-wrap; 
+  word-wrap: break-word; 
+  overflow-x: auto; 
 }
+

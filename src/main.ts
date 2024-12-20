@@ -1,5 +1,5 @@
 import { createCodeBlock } from './helpers/createCodeBlock';
-import { IQuizQuestion, questions } from './models/IInterface';
+import { IQuizQuestion, questions } from './models/IQuiz';
 import './style.scss';
 
 function renderQuiz(questions: IQuizQuestion[]) {

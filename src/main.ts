@@ -41,4 +41,18 @@ function renderQuiz(questions: IQuizQuestion[]) {
   });
 }
 
+const newGameBtn = document.querySelector('#newGameBtn');
+newGameBtn?.addEventListener('click', newGame);
+
+function newGame () {
+  console.log('lets play!')
+}
+
+const highscoreBtn = document.querySelector('#highscoreBtn');
+highscoreBtn?.addEventListener('click', highscore);
+
+function highscore () {
+  console.log('show highscore!')
+}
+
 renderQuiz(questions);

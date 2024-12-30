@@ -44,15 +44,30 @@ function renderQuiz(questions: IQuizQuestion[]) {
 const newGameBtn = document.querySelector('#newGameBtn');
 newGameBtn?.addEventListener('click', newGame);
 
-function newGame () {
-  console.log('lets play!')
+function newGame() {
+  console.log('lets play!');
 }
 
 const highscoreBtn = document.querySelector('#highscoreBtn');
 highscoreBtn?.addEventListener('click', highscore);
 
-function highscore () {
-  console.log('show highscore!')
+const highscoreSection = document.querySelector('#highscoreSection'); 
+const closeHighscoreBtn = document.querySelector('#closeHighscoreBtn');
+closeHighscoreBtn?.addEventListener('click', closeHighscoreModule)
+
+function closeHighscoreModule() {
+  highscoreSection?.classList.add('hidden')
+}
+
+function highscore() {
+  console.log('show highscore!');
+  highscoreSection?.classList.remove('hidden')
+  
+}
+
+const highscoreContainer = document.querySelector('#highscoreContainer');
+if (highscoreContainer) {
+  highscoreContainer.innerHTML = 'lets fill this list';
 }
 
 renderQuiz(questions);

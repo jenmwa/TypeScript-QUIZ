@@ -1,4 +1,5 @@
 import { createCodeBlock } from './helpers/createCodeBlock';
+import { getRandomQuestions } from './helpers/shuffleQuestionArray';
 import { highscoreList } from './models/IHighscore';
 import { IQuizQuestion, questions } from './models/IQuiz';
 import './style.scss';
@@ -78,6 +79,8 @@ function newGame() {
       <input type="text" class="name-input" id="nameInput"></input>
     </label>
     <p class="small-text">spelregler</p>
+    <div id="countdown"></div>
+    <div id="question-container"></div>
     <button class="play-game-btn" id="playGameBtn" disabled >Starta spelet</button>
   </div>
   `;
@@ -100,8 +103,8 @@ function newGame() {
 }
 
 function checkNameInput() {
-  const nameInput = document.querySelector('#nameInput') as HTMLInputElement;
-  const playGameBtn = document.querySelector('#playGameBtn') as HTMLButtonElement;
+  const nameInput: HTMLInputElement = document.querySelector('#nameInput')!;
+  const playGameBtn: HTMLButtonElement = document.querySelector('#playGameBtn')!;
 
   if (nameInput && playGameBtn) {
     if (nameInput.value.length >= 3) {
@@ -123,10 +126,45 @@ console.log('playername is:', playerName)
 function playGame() {
   console.log('LETS PLAY');
   console.log('playername is:', playerName)
+  const selectedQuestions = getRandomQuestions(questions, 10);
+  console.log(selectedQuestions);
+    //nedräkning 3 -2-1 - visa fråga 1.
+  startCountdown(selectedQuestions);
+  // renderQuestion(selectedQuestions)
+
   //10 randomfrågor från vår lista
   // visa fråga 1
   //visa vart vi är 1/10
   //starta timer
+}
+
+function startCountdown(selectedQuestions: IQuizQuestion[]) {
+  const countdownElement = document.getElementById('countdown');
+  let countdown = 3;  // Starta nedräkningen på 3
+  countdownElement!.textContent = countdown.toString();
+
+  const countdownInterval = setInterval(() => {
+    countdown--;
+    countdownElement!.textContent = countdown.toString();
+
+    if (countdown === 0) {
+      clearInterval(countdownInterval);  // Stoppa nedräkningen när den är slut
+      renderQuestion(selectedQuestions, 0); // Visa första frågan efter nedräkningen
+    }
+  }, 1000);  // Vänta 1 sekund (1000 ms) mellan varje nedräkningsnummer
+}
+
+function renderQuestion(selectedQuestions: IQuizQuestion[], questionIndex: number) {
+console.log(selectedQuestions[questionIndex])
+const questionContainer = document.getElementById('question-container');
+  const question = selectedQuestions[questionIndex];
+
+  questionContainer!.innerHTML = `
+    <h2>Fråga ${questionIndex + 1}</h2>
+    <p>${question.questionText}</p>
+   
+    
+  `;
 }
 
 function closeHighscoreModule() {

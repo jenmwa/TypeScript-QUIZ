@@ -43,9 +43,16 @@ header {
 }
 
 main {
+  max-width: 400px;
   padding-inline: $padding-inline;
   padding-block: 2rem;
 }
+
+footer {
+  margin-block: 4rem 2rem;
+}
+
+
 
 h1 {
   text-align: center;

@@ -1,7 +1,7 @@
 import { createCodeBlock } from './helpers/createCodeBlock';
 import { renderHighscoreSection } from './helpers/renderHTML';
 import { getRandomQuestions } from './helpers/shuffleQuestionArray';
-import { startCountdown } from './helpers/timers';
+import { startCountdown, startTimer } from './helpers/timers';
 import { IQuizQuestion, questions } from './models/IQuiz';
 import './style.scss';
 
@@ -18,7 +18,11 @@ const closeHighscoreBtn: HTMLButtonElement = document.querySelector('#closeHighs
 const gameSection: HTMLElement = document.querySelector('#gameSection')!;
 const highscoreBtn: HTMLButtonElement = document.querySelector('#highscoreBtn')!;
 export const highscoreContainer: HTMLDivElement = document.querySelector('#highscoreContainer')!;
-let playerName: string  = '';
+export const playerNameSpan = document.querySelector('#playerName');
+export const timerDisplay = document.getElementById('timerDisplay')!;
+export const quizContainer = document.getElementById('quiz-container');
+
+export let playerName: string = '';
 
 //*
 //
@@ -27,10 +31,7 @@ let playerName: string  = '';
 //
 // *
 
-
 function renderQuiz(questions: IQuizQuestion[]) {
-  const quizContainer = document.getElementById('quiz-container');
-
   questions.forEach(question => {
     const questionContainer = document.createElement('div');
     questionContainer.classList.add('question');
@@ -66,8 +67,6 @@ function renderQuiz(questions: IQuizQuestion[]) {
     quizContainer?.appendChild(questionContainer);
   });
 }
-
-
 
 function newGame() {
   console.log('lets play!');
@@ -116,27 +115,26 @@ function checkNameInput() {
 
     console.log('Input value has changed to:', nameInput.value);
     playerName = nameInput.value;
-    
   } else {
     console.error('nameInput or playGameBtn element not found in checkNameInput');
   }
 }
 
-console.log('playername is:', playerName)
+console.log('playername is:', playerName);
 
 function playGame() {
   console.log('LETS PLAY');
-  console.log('playername is:', playerName)
+  console.log('playername is:', playerName);
   const selectedQuestions = getRandomQuestions(questions, 10);
   console.log(selectedQuestions);
   startCountdown(selectedQuestions);
+  startTimer();
 }
 
 //TODO:
-  // visa fråga 1
-  //visa vart vi är 1/10
-  //starta timer
-
+// visa fråga 1
+//visa vart vi är 1/10
+//starta timer
 
 function closeHighscoreModule() {
   highscoreSection?.classList.add('hidden');
@@ -145,9 +143,8 @@ function closeHighscoreModule() {
 function highscore() {
   console.log('show highscore!');
   highscoreSection?.classList.remove('hidden');
-  renderHighscoreSection()
+  renderHighscoreSection();
 }
-
 
 //*
 //
@@ -159,7 +156,5 @@ function highscore() {
 newGameBtn?.addEventListener('click', newGame);
 highscoreBtn?.addEventListener('click', highscore);
 closeHighscoreBtn?.addEventListener('click', closeHighscoreModule);
-
-
 
 renderQuiz(questions);

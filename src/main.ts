@@ -1,6 +1,7 @@
 import { createCodeBlock } from './helpers/createCodeBlock';
+import { renderHighscoreSection } from './helpers/renderHTML';
 import { getRandomQuestions } from './helpers/shuffleQuestionArray';
-import { highscoreList } from './models/IHighscore';
+import { startCountdown } from './helpers/timers';
 import { IQuizQuestion, questions } from './models/IQuiz';
 import './style.scss';
 
@@ -16,7 +17,7 @@ const highscoreSection: HTMLElement = document.querySelector('#highscoreSection'
 const closeHighscoreBtn: HTMLButtonElement = document.querySelector('#closeHighscoreBtn')!;
 const gameSection: HTMLElement = document.querySelector('#gameSection')!;
 const highscoreBtn: HTMLButtonElement = document.querySelector('#highscoreBtn')!;
-const highscoreContainer: HTMLDivElement = document.querySelector('#highscoreContainer')!;
+export const highscoreContainer: HTMLDivElement = document.querySelector('#highscoreContainer')!;
 let playerName: string  = '';
 
 //*
@@ -128,44 +129,14 @@ function playGame() {
   console.log('playername is:', playerName)
   const selectedQuestions = getRandomQuestions(questions, 10);
   console.log(selectedQuestions);
-    //nedräkning 3 -2-1 - visa fråga 1.
   startCountdown(selectedQuestions);
-  // renderQuestion(selectedQuestions)
+}
 
-  //10 randomfrågor från vår lista
+//TODO:
   // visa fråga 1
   //visa vart vi är 1/10
   //starta timer
-}
 
-function startCountdown(selectedQuestions: IQuizQuestion[]) {
-  const countdownElement = document.getElementById('countdown');
-  let countdown = 3;  // Starta nedräkningen på 3
-  countdownElement!.textContent = countdown.toString();
-
-  const countdownInterval = setInterval(() => {
-    countdown--;
-    countdownElement!.textContent = countdown.toString();
-
-    if (countdown === 0) {
-      clearInterval(countdownInterval);  // Stoppa nedräkningen när den är slut
-      renderQuestion(selectedQuestions, 0); // Visa första frågan efter nedräkningen
-    }
-  }, 1000);  // Vänta 1 sekund (1000 ms) mellan varje nedräkningsnummer
-}
-
-function renderQuestion(selectedQuestions: IQuizQuestion[], questionIndex: number) {
-console.log(selectedQuestions[questionIndex])
-const questionContainer = document.getElementById('question-container');
-  const question = selectedQuestions[questionIndex];
-
-  questionContainer!.innerHTML = `
-    <h2>Fråga ${questionIndex + 1}</h2>
-    <p>${question.questionText}</p>
-   
-    
-  `;
-}
 
 function closeHighscoreModule() {
   highscoreSection?.classList.add('hidden');
@@ -175,13 +146,6 @@ function highscore() {
   console.log('show highscore!');
   highscoreSection?.classList.remove('hidden');
   renderHighscoreSection()
-}
-
-function renderHighscoreSection() {
-  if (highscoreContainer) {
-    highscoreContainer.innerHTML = 'lets fill this list';
-    console.log('highscorelist is:', highscoreList);
-  }
 }
 
 

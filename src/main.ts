@@ -1,6 +1,30 @@
 import { createCodeBlock } from './helpers/createCodeBlock';
+import { highscoreList } from './models/IHighscore';
 import { IQuizQuestion, questions } from './models/IQuiz';
 import './style.scss';
+
+//*
+//
+//
+// HTML-ELEMENTS
+//
+// *
+
+const newGameBtn: HTMLButtonElement = document.querySelector('#newGameBtn')!;
+const highscoreSection: HTMLElement = document.querySelector('#highscoreSection')!;
+const closeHighscoreBtn: HTMLButtonElement = document.querySelector('#closeHighscoreBtn')!;
+const gameSection: HTMLElement = document.querySelector('#gameSection')!;
+const highscoreBtn: HTMLButtonElement = document.querySelector('#highscoreBtn')!;
+const highscoreContainer: HTMLDivElement = document.querySelector('#highscoreContainer')!;
+let playerName: string  = '';
+
+//*
+//
+//
+// Functions to-be-cleaned-up
+//
+// *
+
 
 function renderQuiz(questions: IQuizQuestion[]) {
   const quizContainer = document.getElementById('quiz-container');
@@ -41,33 +65,99 @@ function renderQuiz(questions: IQuizQuestion[]) {
   });
 }
 
-const newGameBtn = document.querySelector('#newGameBtn');
-newGameBtn?.addEventListener('click', newGame);
+
 
 function newGame() {
   console.log('lets play!');
+  if (gameSection) {
+    gameSection.innerHTML = `
+  <div>
+    <label>
+    <span>Namn:</span>
+    <div class="error-div"></div>
+      <input type="text" class="name-input" id="nameInput"></input>
+    </label>
+    <p class="small-text">spelregler</p>
+    <button class="play-game-btn" id="playGameBtn" disabled >Starta spelet</button>
+  </div>
+  `;
+
+    const nameInput: HTMLInputElement = document.querySelector('#nameInput')!;
+    const playGameBtn: HTMLButtonElement = document.querySelector('#playGameBtn')!;
+
+    if (nameInput && playGameBtn) {
+      console.log('input element exists');
+      nameInput.addEventListener('input', checkNameInput);
+      playGameBtn.addEventListener('click', playGame);
+    } else {
+      console.error('nameInput or playGameBtn element not found');
+    }
+
+    if (newGameBtn) {
+      newGameBtn.disabled = true;
+    }
+  }
 }
 
-const highscoreBtn = document.querySelector('#highscoreBtn');
-highscoreBtn?.addEventListener('click', highscore);
+function checkNameInput() {
+  const nameInput = document.querySelector('#nameInput') as HTMLInputElement;
+  const playGameBtn = document.querySelector('#playGameBtn') as HTMLButtonElement;
 
-const highscoreSection = document.querySelector('#highscoreSection'); 
-const closeHighscoreBtn = document.querySelector('#closeHighscoreBtn');
-closeHighscoreBtn?.addEventListener('click', closeHighscoreModule)
+  if (nameInput && playGameBtn) {
+    if (nameInput.value.length >= 3) {
+      playGameBtn.disabled = false;
+    } else {
+      playGameBtn.disabled = true;
+    }
+
+    console.log('Input value has changed to:', nameInput.value);
+    playerName = nameInput.value;
+    
+  } else {
+    console.error('nameInput or playGameBtn element not found in checkNameInput');
+  }
+}
+
+console.log('playername is:', playerName)
+
+function playGame() {
+  console.log('LETS PLAY');
+  console.log('playername is:', playerName)
+  //10 randomfrågor från vår lista
+  // visa fråga 1
+  //visa vart vi är 1/10
+  //starta timer
+}
 
 function closeHighscoreModule() {
-  highscoreSection?.classList.add('hidden')
+  highscoreSection?.classList.add('hidden');
 }
 
 function highscore() {
   console.log('show highscore!');
-  highscoreSection?.classList.remove('hidden')
-  
+  highscoreSection?.classList.remove('hidden');
+  renderHighscoreSection()
 }
 
-const highscoreContainer = document.querySelector('#highscoreContainer');
-if (highscoreContainer) {
-  highscoreContainer.innerHTML = 'lets fill this list';
+function renderHighscoreSection() {
+  if (highscoreContainer) {
+    highscoreContainer.innerHTML = 'lets fill this list';
+    console.log('highscorelist is:', highscoreList);
+  }
 }
+
+
+//*
+//
+//
+// EVENTLISTENERS
+//
+// *
+
+newGameBtn?.addEventListener('click', newGame);
+highscoreBtn?.addEventListener('click', highscore);
+closeHighscoreBtn?.addEventListener('click', closeHighscoreModule);
+
+
 
 renderQuiz(questions);

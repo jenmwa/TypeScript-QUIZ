@@ -6,7 +6,7 @@ let timerInterval: number | null = null;
 let timeLeft = 0;
 
 export function startCountdown(selectedQuestions: IQuizQuestion[]) {
-  const countdownElement = document.getElementById('countdown');
+  const countdownElement = document.querySelector('#countdown');
   let countdown = 3;
   countdownElement!.textContent = countdown.toString();
 
@@ -16,6 +16,11 @@ export function startCountdown(selectedQuestions: IQuizQuestion[]) {
 
     if (countdown === 0) {
       clearInterval(countdownInterval);
+
+      if (countdownElement) {
+        countdownElement.classList.add('hidden');
+      }
+      
       renderQuestion(selectedQuestions, 0);
     }
   }, 1000);

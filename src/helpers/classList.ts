@@ -1,6 +1,6 @@
 export function selectedRadioBtn(event: Event): void {
   const inputElement = event.target as HTMLInputElement;
-  
+
   const selectedOption = inputElement.value;
   console.log('Vald option:', selectedOption);
 

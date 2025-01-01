@@ -49,7 +49,11 @@ main {
 }
 
 footer {
-  margin-block: 4rem 2rem;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  padding: 4rem 2rem 1rem 2rem;
+
 }
 
 h1 {
@@ -125,8 +129,13 @@ input[type='text'] {
 .quiz-container {
   max-width: 1280px;
   margin: 0 auto;
+}
 
-  outline: 1px solid red;
+.countdown {
+  font-size: 5rem;
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
 }
 
 .highscore-btn {
@@ -166,10 +175,9 @@ input[type='text'] {
     &:active {
       background: #0a0a0a;
     }
-
   }
   label.choosen {
-    background: black;;
+    background: black;
   }
 }
 

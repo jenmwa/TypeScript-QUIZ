@@ -16,7 +16,7 @@ export function renderQuestion(selectedQuestions: IQuizQuestion[], questionIndex
 
   if (question.codeExample) {
     const codeBlock = createCodeBlock(question.codeExample);
-    questionHTML += codeBlock; 
+    questionHTML += codeBlock;
   }
 
   let optionsHTML = '';
@@ -33,19 +33,17 @@ export function renderQuestion(selectedQuestions: IQuizQuestion[], questionIndex
   });
 
   const userBtn = `
-  <button>NÄSTA FRÅGA</button>`;
-
+  <button class="button next-question-btn">NÄSTA FRÅGA</button>`;
 
   questionHTML += optionsHTML += userBtn;
 
   questionContainer!.innerHTML = questionHTML;
 
   const radioButtons = document.querySelectorAll('.answer-option');
-  
-  radioButtons.forEach((radioButton) => {
-    radioButton.addEventListener('change', selectedRadioBtn);  
-  });
 
+  radioButtons.forEach(radioButton => {
+    radioButton.addEventListener('change', selectedRadioBtn);
+  });
 }
 
 export function renderHighscoreSection() {

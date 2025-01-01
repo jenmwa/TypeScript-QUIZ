@@ -16,6 +16,9 @@ const highscoreSection: HTMLElement = document.querySelector('#highscoreSection'
 const closeHighscoreBtn: HTMLButtonElement = document.querySelector('#closeHighscoreBtn')!;
 const gameSection: HTMLElement = document.querySelector('#gameSection')!;
 const highscoreBtn: HTMLButtonElement = document.querySelector('#highscoreBtn')!;
+
+// const playGameContainer: HTMLDivElement = document.querySelector('#playGameContainer')!;
+
 export const highscoreContainer: HTMLDivElement = document.querySelector('#highscoreContainer')!;
 export const playerNameSpan = document.querySelector('#playerName');
 export const timerDisplay = document.getElementById('timerDisplay')!;
@@ -30,69 +33,38 @@ export let playerName: string = '';
 //
 // *
 
-// function renderQuiz(questions: IQuizQuestion[]) {
-//   questions.forEach(question => {
-//     const questionContainer = document.createElement('div');
-//     questionContainer.classList.add('question');
-
-//     let questionHTML = `
-//       <p>${question.questionText}</p>
-//     `;
-
-//     if (question.codeExample) {
-//       const codeBlock = createCodeBlock(question.codeExample);
-//       questionHTML += codeBlock.outerHTML;
-//     }
-
-//     questionContainer.innerHTML = questionHTML;
-
-//     const answersContainer = document.createElement('div');
-
-//     [question.answer1, question.answer2, question.answer3].forEach((answer, index) => {
-//       const answerHTML = `
-//         <div class="answer-container">
-//           <label for="answer-${index}">
-//             <input type="radio" id="answer-${index}" class="answer-option" name="question-${question.id}">
-//             ${answer.optionText}
-//           </label>
-//           <br>
-//         </div>
-//       `;
-
-//       answersContainer.innerHTML += answerHTML;
-//     });
-//     questionContainer.appendChild(answersContainer);
-
-//     quizContainer?.appendChild(questionContainer);
-//   });
-// }
 
 function newGame() {
   console.log('lets play!');
   if (gameSection) {
     gameSection.innerHTML = `
-  <div>
-    <label>
-    <span>Namn:</span>
-    <div class="error-div"></div>
-      <input type="text" class="name-input" id="nameInput"></input>
-    </label>
-    <p class="small-text">spelregler</p>
-    <div id="countdown"></div>
-    <div id="questionContainer" class="question-container"></div>
-    <button class="play-game-btn" id="playGameBtn" disabled >Starta spelet</button>
-  </div>
-  `;
+      <div class="userNameContainer">
+        <label>
+          <span>Namn:</span>
+          <div class="error-div"></div>
+          <input type="text" class="name-input" id="nameInput"></input>
+        </label>
+        <p class="small-text">spelregler</p>
+      </div>
+      <div id="countdown" class="countdown"></div>
+      <div id="questionContainer" class="question-container"></div>
+      <div id="playGameContainer">
+        <button class="play-game-btn" id="playGameBtn" disabled>Starta spelet</button>
+      </div>
+    `;
 
+    // Re-select elements after the innerHTML update
     const nameInput: HTMLInputElement = document.querySelector('#nameInput')!;
     const playGameBtn: HTMLButtonElement = document.querySelector('#playGameBtn')!;
+    const playGameContainer: HTMLDivElement = document.querySelector('#playGameContainer')!;
+    const userNameContainer: HTMLDivElement = document.querySelector('.userNameContainer')!;
 
-    if (nameInput && playGameBtn) {
-      console.log('input element exists');
+    if (nameInput && playGameBtn && playGameContainer && userNameContainer) {
+      console.log('input element, playGameBtn, playGameContainer, and userNameContainer exist');
       nameInput.addEventListener('input', checkNameInput);
       playGameBtn.addEventListener('click', playGame);
     } else {
-      console.error('nameInput or playGameBtn element not found');
+      console.error('One or more elements not found after HTML injection');
     }
 
     if (newGameBtn) {
@@ -122,12 +94,22 @@ function checkNameInput() {
 console.log('playername is:', playerName);
 
 function playGame() {
-  console.log('LETS PLAY');
-  console.log('playername is:', playerName);
-  const selectedQuestions = getRandomQuestions(questions, 10);
-  console.log(selectedQuestions);
-  startCountdown(selectedQuestions);
-  startTimer();
+  const playGameContainer: HTMLDivElement = document.querySelector('#playGameContainer')!;
+  const userNameContainer: HTMLDivElement = document.querySelector('.userNameContainer')!;
+
+  if (playGameContainer && userNameContainer) {
+    playGameContainer.classList.add('hidden'); 
+    userNameContainer.classList.add('hidden'); 
+    
+    console.log('LETS PLAY');
+    console.log('playername is:', playerName);
+    const selectedQuestions = getRandomQuestions(questions, 10);
+    console.log(selectedQuestions);
+    startCountdown(selectedQuestions);
+    startTimer();
+  } else {
+    console.error('playGameContainer or userNameContainer not found when trying to hide');
+  }
 }
 
 //TODO:

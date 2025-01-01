@@ -20,7 +20,7 @@ export function startCountdown(selectedQuestions: IQuizQuestion[]) {
       if (countdownElement) {
         countdownElement.classList.add('hidden');
       }
-      
+
       renderQuestion(selectedQuestions, 0);
     }
   }, 1000);

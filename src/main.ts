@@ -33,7 +33,6 @@ export let playerName: string = '';
 //
 // *
 
-
 function newGame() {
   console.log('lets play!');
   if (gameSection) {
@@ -98,9 +97,9 @@ function playGame() {
   const userNameContainer: HTMLDivElement = document.querySelector('.userNameContainer')!;
 
   if (playGameContainer && userNameContainer) {
-    playGameContainer.classList.add('hidden'); 
-    userNameContainer.classList.add('hidden'); 
-    
+    playGameContainer.classList.add('hidden');
+    userNameContainer.classList.add('hidden');
+
     console.log('LETS PLAY');
     console.log('playername is:', playerName);
     const selectedQuestions = getRandomQuestions(questions, 10);
@@ -112,10 +111,11 @@ function playGame() {
   }
 }
 
-//TODO:
-// visa fråga 1
-//visa vart vi är 1/10
-//starta timer
+export function nextQuestion(): void {
+  console.log('Next question');
+  //checka svar - rätt 1p:
+  //visa next index: 
+}
 
 function closeHighscoreModule() {
   highscoreSection?.classList.add('hidden');

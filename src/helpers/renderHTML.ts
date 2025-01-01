@@ -1,8 +1,10 @@
-import { highscoreContainer } from '../main';
+import { highscoreContainer, nextQuestion } from '../main';
 import { highscoreList } from '../models/IHighscore';
 import { IQuizQuestion } from '../models/IQuiz';
 import { selectedRadioBtn } from './classList';
 import { createCodeBlock } from './createCodeBlock';
+
+export const nextQuestionBtn: HTMLButtonElement = document.querySelector('#nextQuestionBtn')!;
 
 export function renderQuestion(selectedQuestions: IQuizQuestion[], questionIndex: number) {
   console.log(selectedQuestions[questionIndex]);
@@ -23,21 +25,23 @@ export function renderQuestion(selectedQuestions: IQuizQuestion[], questionIndex
   optionsHTML += '<div class="answers-container">';
   [question.answer1, question.answer2, question.answer3].forEach(answer => {
     optionsHTML += `
-      
-        <label class="answer-option-label">
-          <input type="radio" name="question${question.id}" class="answer-option" value="${answer.optionText}" />
-          ${answer.optionText}
-        </label>
-     
+      <label class="answer-option-label">
+        <input type="radio" name="question${question.id}" class="answer-option" value="${answer.optionText}" />
+        ${answer.optionText}
+      </label>
     `;
   });
+  optionsHTML += '</div>';
 
   const userBtn = `
-  <button class="button next-question-btn">NÄSTA FRÅGA</button>`;
+  <button class="button next-question-btn" id="nextQuestionBtn">NÄSTA FRÅGA</button>`;
 
   questionHTML += optionsHTML += userBtn;
 
   questionContainer!.innerHTML = questionHTML;
+
+  const nextQuestionBtn: HTMLButtonElement = document.querySelector('#nextQuestionBtn')!;
+  nextQuestionBtn.addEventListener('click', nextQuestion);
 
   const radioButtons = document.querySelectorAll('.answer-option');
 

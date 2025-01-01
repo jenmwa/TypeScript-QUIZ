@@ -1,14 +1,13 @@
-import { createCodeBlock } from './helpers/createCodeBlock';
 import { renderHighscoreSection } from './helpers/renderHTML';
 import { getRandomQuestions } from './helpers/shuffleQuestionArray';
 import { startCountdown, startTimer } from './helpers/timers';
-import { IQuizQuestion, questions } from './models/IQuiz';
+import { questions } from './models/IQuiz';
 import './style.scss';
 
 //*
 //
 //
-// HTML-ELEMENTS
+// VARIABLES
 //
 // *
 
@@ -31,42 +30,42 @@ export let playerName: string = '';
 //
 // *
 
-function renderQuiz(questions: IQuizQuestion[]) {
-  questions.forEach(question => {
-    const questionContainer = document.createElement('div');
-    questionContainer.classList.add('question');
+// function renderQuiz(questions: IQuizQuestion[]) {
+//   questions.forEach(question => {
+//     const questionContainer = document.createElement('div');
+//     questionContainer.classList.add('question');
 
-    let questionHTML = `
-      <p>${question.questionText}</p>
-    `;
+//     let questionHTML = `
+//       <p>${question.questionText}</p>
+//     `;
 
-    if (question.codeExample) {
-      const codeBlock = createCodeBlock(question.codeExample);
-      questionHTML += codeBlock.outerHTML;
-    }
+//     if (question.codeExample) {
+//       const codeBlock = createCodeBlock(question.codeExample);
+//       questionHTML += codeBlock.outerHTML;
+//     }
 
-    questionContainer.innerHTML = questionHTML;
+//     questionContainer.innerHTML = questionHTML;
 
-    const answersContainer = document.createElement('div');
+//     const answersContainer = document.createElement('div');
 
-    [question.answer1, question.answer2, question.answer3].forEach((answer, index) => {
-      const answerHTML = `
-        <div class="answer-container">
-          <label for="answer-${index}">
-            <input type="radio" id="answer-${index}" class="answer-option" name="question-${question.id}">
-            ${answer.optionText}
-          </label>
-          <br>
-        </div>
-      `;
+//     [question.answer1, question.answer2, question.answer3].forEach((answer, index) => {
+//       const answerHTML = `
+//         <div class="answer-container">
+//           <label for="answer-${index}">
+//             <input type="radio" id="answer-${index}" class="answer-option" name="question-${question.id}">
+//             ${answer.optionText}
+//           </label>
+//           <br>
+//         </div>
+//       `;
 
-      answersContainer.innerHTML += answerHTML;
-    });
-    questionContainer.appendChild(answersContainer);
+//       answersContainer.innerHTML += answerHTML;
+//     });
+//     questionContainer.appendChild(answersContainer);
 
-    quizContainer?.appendChild(questionContainer);
-  });
-}
+//     quizContainer?.appendChild(questionContainer);
+//   });
+// }
 
 function newGame() {
   console.log('lets play!');
@@ -80,7 +79,7 @@ function newGame() {
     </label>
     <p class="small-text">spelregler</p>
     <div id="countdown"></div>
-    <div id="question-container"></div>
+    <div id="questionContainer" class="question-container"></div>
     <button class="play-game-btn" id="playGameBtn" disabled >Starta spelet</button>
   </div>
   `;
@@ -157,4 +156,4 @@ newGameBtn?.addEventListener('click', newGame);
 highscoreBtn?.addEventListener('click', highscore);
 closeHighscoreBtn?.addEventListener('click', closeHighscoreModule);
 
-renderQuiz(questions);
+// renderQuiz(questions);

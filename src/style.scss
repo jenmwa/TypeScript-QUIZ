@@ -148,9 +148,29 @@ input[type='text'] {
  
 // }
 
-.answer-container {
+.answers-container {
   display: flex;
   flex-direction: column;
+
+  label {
+    cursor: pointer;
+    padding: 0.5rem;
+    outline: 1px solid $white;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+
+    &:hover {
+      background: #201f216a;
+      cursor: pointer;
+    }
+    &:active {
+      background: #0a0a0a;
+    }
+
+  }
+  label.choosen {
+    background: black;;
+  }
 }
 
 //fixa mediaqueries
@@ -164,16 +184,15 @@ input[type='text'] {
   }
 }
 
-pre {
-  margin-inline: 1rem;
-  background-color: #f4f4f4;
-  color: slategray;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-  font-family: 'Courier New', Courier, monospace;
+.code-block {
+  background-color: #201f21;
+  color: $white;
+  padding: 15px;
+  border-radius: 5px;
+  overflow-x: auto;
+  font-family: monospace;
   white-space: pre-wrap;
   word-wrap: break-word;
-  overflow-x: auto;
 }
 
 .highscore {

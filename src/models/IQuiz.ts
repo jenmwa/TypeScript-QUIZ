@@ -144,8 +144,8 @@ value = 42;`,
     id: 14,
     questionText: 'Vad är typen på följande variabel?',
     codeExample: `type A = { name: string };
-type B = { age: number };
-type C = A & B;`,
+          type B = { age: number };
+          type C = A & B;`,
     answer1: { optionText: '{ name: string; age: number }', isCorrect: true },
     answer2: { optionText: '{ name: string } | { age: number }', isCorrect: false },
     answer3: { optionText: '{ name: number; age: number }', isCorrect: false },

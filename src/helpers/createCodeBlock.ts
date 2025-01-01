@@ -1,7 +1,9 @@
-export function createCodeBlock(code: string) {
-  const preElement = document.createElement('pre');
-  const codeElement = document.createElement('code');
-  codeElement.textContent = code;
-  preElement.appendChild(codeElement);
-  return preElement;
+export function createCodeBlock(code: string): string {
+  return `
+    <pre class="code-block">
+      <code>
+        ${code}
+      </code>
+    </pre>
+  `;
 }

@@ -1,7 +1,7 @@
-import { renderHighscoreSection } from './helpers/renderHTML';
+import { renderHighscoreSection, renderQuestion } from './helpers/renderHTML';
 import { getRandomQuestions } from './helpers/shuffleQuestionArray';
 import { startCountdown, startTimer } from './helpers/timers';
-import { questions } from './models/IQuiz';
+import { IQuizQuestion, questions } from './models/IQuiz';
 import './style.scss';
 
 //*
@@ -18,6 +18,8 @@ const gameSection: HTMLElement = document.querySelector('#gameSection')!;
 const highscoreBtn: HTMLButtonElement = document.querySelector('#highscoreBtn')!;
 
 // const playGameContainer: HTMLDivElement = document.querySelector('#playGameContainer')!;
+let currentQuestionIndex = 0;
+let selectedQuestions: IQuizQuestion[] = []; 
 
 export const highscoreContainer: HTMLDivElement = document.querySelector('#highscoreContainer')!;
 export const playerNameSpan = document.querySelector('#playerName');
@@ -25,6 +27,7 @@ export const timerDisplay = document.getElementById('timerDisplay')!;
 export const quizContainer = document.getElementById('quiz-container');
 
 export let playerName: string = '';
+
 
 //*
 //
@@ -92,6 +95,8 @@ function checkNameInput() {
 
 console.log('playername is:', playerName);
 
+
+
 function playGame() {
   const playGameContainer: HTMLDivElement = document.querySelector('#playGameContainer')!;
   const userNameContainer: HTMLDivElement = document.querySelector('.userNameContainer')!;
@@ -102,7 +107,7 @@ function playGame() {
 
     console.log('LETS PLAY');
     console.log('playername is:', playerName);
-    const selectedQuestions = getRandomQuestions(questions, 10);
+    selectedQuestions = getRandomQuestions(questions, 10);
     console.log(selectedQuestions);
     startCountdown(selectedQuestions);
     startTimer();
@@ -115,6 +120,14 @@ export function nextQuestion(): void {
   console.log('Next question');
   //checka svar - rätt 1p:
   //visa next index: 
+  currentQuestionIndex++;
+  if (currentQuestionIndex < selectedQuestions.length) {
+    renderQuestion(selectedQuestions, currentQuestionIndex); 
+  } else {
+    console.log('Game Over! No more questions.');
+   
+  }
+
 }
 
 function closeHighscoreModule() {

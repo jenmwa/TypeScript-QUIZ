@@ -8,7 +8,7 @@ let timeLeft = 0;
 export function startCountdown(selectedQuestions: IQuizQuestion[]) {
   const countdownElement = document.querySelector('#countdown');
   let countdown = 3;
-  countdownElement!.textContent = countdown.toString();
+  countdownElement!.innerHTML = countdown.toString();
 
   const countdownInterval = setInterval(() => {
     countdown--;

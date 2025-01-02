@@ -1,7 +1,12 @@
-interface IHighscore {
-  userName: string;
-  score: number;
-  date: string;
+class Player  {
+  constructor (
+  public playerName: string,
+  public quizPoints: number,
+  public time: string,
+  public date: Date,
+  ) {}
 }
 
-export const highscoreList: IHighscore[] = [];
+export interface IHighscore {
+  players: Player[];
+}

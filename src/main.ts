@@ -1,4 +1,5 @@
 
+import { countPoints } from './helpers/countPoints';
 import { selectedQuestions } from './helpers/playGame';
 import { renderHighscoreSection } from './helpers/renderHighScoreHTML';
 import { newGame } from './helpers/renderNewFameHTML';
@@ -37,8 +38,9 @@ export const quizContainer = document.getElementById('quiz-container');
 
 export function nextQuestion(): void {
   console.log('Next question');
-  //checka svar - rätt 1p:
-  //visa next index: 
+
+  countPoints(selectedQuestions, currentQuestionIndex);
+  
   currentQuestionIndex++;
   if (currentQuestionIndex < selectedQuestions.length) {
     renderQuestion(selectedQuestions, currentQuestionIndex); 

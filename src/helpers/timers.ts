@@ -1,6 +1,8 @@
-import { playerName, playerNameSpan, timerDisplay } from '../main';
+import { playerNameSpan, timerDisplay } from '../main';
 import { IQuizQuestion } from '../models/IQuiz';
-import { renderQuestion } from './renderHTML';
+import { playerName } from './checkNameInput';
+import { renderQuestion } from './renderQuestionHTML';
+
 
 let timerInterval: number | null = null;
 let timeLeft = 0;

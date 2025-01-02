@@ -9,7 +9,6 @@ export function shuffleArray<T>(array: T[]): T[] {
   return array;
 }
 
-// Get 10 random questions
 export function getRandomQuestions(questions: IQuizQuestion[], numQuestions: number): IQuizQuestion[] {
   const shuffledQuestions = shuffleArray([...questions]);
   return shuffledQuestions.slice(0, numQuestions);

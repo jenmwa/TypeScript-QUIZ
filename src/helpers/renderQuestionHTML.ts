@@ -1,10 +1,8 @@
-import { highscoreContainer, nextQuestion } from '../main';
-import { highscoreList } from '../models/IHighscore';
-import { IQuizQuestion } from '../models/IQuiz';
-import { selectedRadioBtn } from './classList';
-import { createCodeBlock } from './createCodeBlock';
+import { nextQuestion } from "../main";
+import { IQuizQuestion } from "../models/IQuiz";
+import { selectedRadioBtn } from "./classList";
+import { createCodeBlock } from "./createCodeBlock";
 
-export const nextQuestionBtn: HTMLButtonElement = document.querySelector('#nextQuestionBtn')!;
 
 export function renderQuestion(selectedQuestions: IQuizQuestion[], questionIndex: number) {
   console.log(selectedQuestions[questionIndex]);
@@ -48,11 +46,4 @@ export function renderQuestion(selectedQuestions: IQuizQuestion[], questionIndex
   radioButtons.forEach(radioButton => {
     radioButton.addEventListener('change', selectedRadioBtn);
   });
-}
-
-export function renderHighscoreSection() {
-  if (highscoreContainer) {
-    highscoreContainer.innerHTML = 'lets fill this list';
-    console.log('highscorelist is:', highscoreList);
-  }
 }

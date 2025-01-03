@@ -1,6 +1,6 @@
-import {  gameSection, newGameBtn } from "../main";
-import { checkNameInput } from "./checkNameInput";
-import { playGame } from "./playGame";
+import { gameSection, newGameBtn } from '../main';
+import { checkNameInput } from './checkNameInput';
+import { playGame } from './playGame';
 
 export function newGame() {
   console.log('lets play!');
@@ -21,7 +21,6 @@ export function newGame() {
       </div>
     `;
 
-    // Re-select elements after the innerHTML update
     const nameInput: HTMLInputElement = document.querySelector('#nameInput')!;
     const playGameBtn: HTMLButtonElement = document.querySelector('#playGameBtn')!;
     const playGameContainer: HTMLDivElement = document.querySelector('#playGameContainer')!;

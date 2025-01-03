@@ -1,9 +1,9 @@
-import { IQuizQuestion, questions } from "../models/IQuiz";
-import { playerName } from "./checkNameInput";
-import { getRandomQuestions } from "./shuffleQuestionArray";
-import { startCountdown, startTimer } from "./timers";
+import { IQuizQuestion, questions } from '../models/IQuiz';
+import { playerName } from './checkNameInput';
+import { getRandomQuestions } from './shuffleQuestionArray';
+import { startCountdown, startTimer } from './timers';
 
-export let selectedQuestions: IQuizQuestion[] = []; 
+export let selectedQuestions: IQuizQuestion[] = [];
 
 export function playGame() {
   const playGameContainer: HTMLDivElement = document.querySelector('#playGameContainer')!;

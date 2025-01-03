@@ -1,5 +1,3 @@
-
-
 export let playerName: string = '';
 
 export function checkNameInput() {

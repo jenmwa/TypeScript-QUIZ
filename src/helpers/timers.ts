@@ -3,7 +3,6 @@ import { IQuizQuestion } from '../models/IQuiz';
 import { playerName } from './checkNameInput';
 import { renderQuestion } from './renderQuestionHTML';
 
-
 let timerInterval: number | null = null;
 let timeLeft = 0;
 

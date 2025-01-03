@@ -1,6 +1,7 @@
-import { IQuizQuestion } from "../models/IQuiz";
+import { playerPoints } from '../main';
+import { IQuizQuestion } from '../models/IQuiz';
 
-let quizPoints = 0;
+export let quizPoints = 0;
 
 export function countPoints(selectedQuestions: IQuizQuestion[], questionIndex: number) {
   const question = selectedQuestions[questionIndex];
@@ -15,7 +16,7 @@ export function countPoints(selectedQuestions: IQuizQuestion[], questionIndex: n
     } else {
       quizPoints--;
     }
-    console.log(`Poäng: ${quizPoints}`); 
+    console.log(`Poäng: ${quizPoints}`);
+    playerPoints.innerHTML = 'poäng: ' + String(quizPoints);
   }
-  
 }

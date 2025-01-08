@@ -21,8 +21,9 @@ export const playerPoints: HTMLSpanElement = document.querySelector('#playerPoin
 export const highscoreContainer: HTMLDivElement = document.querySelector('#highscoreContainer')!;
 export const nextQuestionBtn: HTMLButtonElement = document.querySelector('#nextQuestionBtn')!;
 export const playerNameSpan = document.querySelector('#playerName');
-export const timerDisplay = document.getElementById('timerDisplay')!;
-export const quizContainer = document.getElementById('quiz-container');
+export const timerDisplay = document.querySelector('#timerDisplay')!;
+export const quizContainer = document.querySelector('#quiz-container');
+export const endGameSection = document.querySelector('#endGameSection')
 
 //*
 //

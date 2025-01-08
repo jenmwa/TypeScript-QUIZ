@@ -17,5 +17,3 @@ export function checkNameInput() {
     console.error('nameInput or playGameBtn element not found in checkNameInput');
   }
 }
-
-console.log('playername is:', playerName);

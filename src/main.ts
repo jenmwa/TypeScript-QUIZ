@@ -1,8 +1,5 @@
-import { countPoints } from './helpers/countPoints';
-import { selectedQuestions } from './helpers/playGame';
 import { renderHighscoreSection } from './helpers/renderHighScoreHTML';
 import { newGame } from './helpers/renderNewGameHTML';
-import { renderQuestion } from './helpers/renderQuestionHTML';
 import './style.scss';
 
 //*
@@ -20,7 +17,6 @@ const closeHighscoreBtn: HTMLButtonElement = document.querySelector('#closeHighs
 export const playerPoints: HTMLSpanElement = document.querySelector('#playerPoints')!;
 
 // const playGameContainer: HTMLDivElement = document.querySelector('#playGameContainer')!;
-let currentQuestionIndex = 0;
 
 export const highscoreContainer: HTMLDivElement = document.querySelector('#highscoreContainer')!;
 export const nextQuestionBtn: HTMLButtonElement = document.querySelector('#nextQuestionBtn')!;
@@ -34,19 +30,6 @@ export const quizContainer = document.getElementById('quiz-container');
 // Functions to-be-cleaned-up
 //
 // *
-
-export function nextQuestion(): void {
-  console.log('Next question');
-
-  countPoints(selectedQuestions, currentQuestionIndex);
-
-  currentQuestionIndex++;
-  if (currentQuestionIndex < selectedQuestions.length) {
-    renderQuestion(selectedQuestions, currentQuestionIndex);
-  } else {
-    console.log('Game Over! No more questions.');
-  }
-}
 
 function closeHighscoreModule() {
   highscoreSection?.classList.add('hidden');

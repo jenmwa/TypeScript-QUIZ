@@ -1,7 +1,7 @@
-import { nextQuestion } from '../main';
 import { IQuizQuestion } from '../models/IQuiz';
 import { selectedRadioBtn } from './classList';
 import { createCodeBlock } from './createCodeBlock';
+import { nextQuestion } from './nextQuestion';
 
 export function renderQuestion(selectedQuestions: IQuizQuestion[], questionIndex: number) {
   console.log(selectedQuestions[questionIndex]);

@@ -3,7 +3,6 @@ import { checkNameInput } from './checkNameInput';
 import { playGame } from './playGame';
 
 export function newGame() {
-  console.log('lets play!');
   if (gameSection) {
     gameSection.innerHTML = `
       <div class="userNameContainer">

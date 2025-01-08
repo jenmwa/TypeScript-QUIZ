@@ -3,8 +3,8 @@ import { IQuizQuestion } from '../models/IQuiz';
 import { playerName } from './checkNameInput';
 import { renderQuestion } from './renderQuestionHTML';
 
-let timerInterval: number | null = null;
-let timeLeft = 0;
+export let timerInterval: number | null = null;
+export let timeLeft = 0;
 
 export function startCountdown(selectedQuestions: IQuizQuestion[]) {
   const countdownElement = document.querySelector('#countdown');
@@ -37,10 +37,6 @@ export function startCounting(): void {
     playerNameSpan.innerHTML = playerName;
   }
 
-  if (timerInterval !== null) {
-    clearInterval(timerInterval);
-  }
-
   timerInterval = setInterval(countUp, 1000);
 }
 
@@ -51,13 +47,12 @@ export function countUp(): void {
 
 export function updateTimerDisplay(): void {
   const formattedTime = formatTime(timeLeft);
-  // console.log(formattedTime);
   if (formattedTime) {
     timerDisplay.innerHTML = formattedTime;
   }
 }
 
-function formatTime(seconds: number): string {
+export function formatTime(seconds: number): string {
   const hours = Math.floor(seconds / 3600);
   const minutes = Math.floor((seconds % 3600) / 60);
   const remainingSeconds = seconds % 60;

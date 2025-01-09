@@ -1,4 +1,3 @@
-
 import { highscore } from './helpers/renderHighScoreHTML';
 import { newGame } from './helpers/renderNewGameHTML';
 import './style.scss';
@@ -38,8 +37,6 @@ export const endGameSection = document.querySelector('#endGameSection')!;
 function closeHighscoreModule() {
   highscoreSection?.classList.add('hidden');
 }
-
-
 
 //*
 //

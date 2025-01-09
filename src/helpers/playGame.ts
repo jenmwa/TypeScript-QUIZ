@@ -1,11 +1,10 @@
-
 import { IQuizQuestion, questions } from '../models/IQuiz';
 import { playerName } from './checkNameInput';
+import { totalQuestions } from './playAgain';
 import { createNewPlayer } from './player';
 import { getRandomQuestions } from './shuffleQuestionArray';
 import { startCountdown, startTimer } from './timers';
-
-
+import { updateProgressBar } from './updateProgressBar';
 
 export let selectedQuestions: IQuizQuestion[] = [];
 
@@ -14,7 +13,6 @@ export function setSelectedQuestions(questions: IQuizQuestion[]): void {
 }
 
 export function playGame() {
-
   const userNameContainer: HTMLDivElement = document.querySelector('.userNameContainer')!;
   userNameContainer.classList.add('hidden');
 
@@ -26,7 +24,8 @@ export function playGame() {
   if (playGameContainer && userNameContainer) {
     playGameContainer.classList.add('hidden');
     userNameContainer.classList.add('hidden');
-    selectedQuestions = getRandomQuestions(questions, 10);
+    selectedQuestions = getRandomQuestions(questions, totalQuestions);
+    updateProgressBar();
     startCountdown(selectedQuestions);
     startTimer();
   } else {

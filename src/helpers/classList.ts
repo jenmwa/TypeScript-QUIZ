@@ -1,5 +1,12 @@
-import { userContainer, playerPoints, endGameSection, startSection, newGameBtn, playerNameSpan, gameSection } from "../main";
-
+import {
+  userContainer,
+  playerPoints,
+  endGameSection,
+  startSection,
+  newGameBtn,
+  playerNameSpan,
+  gameSection,
+} from '../main';
 
 export function selectedRadioBtn(event: Event): void {
   const inputElement = event.target as HTMLInputElement;
@@ -15,15 +22,14 @@ export function selectedRadioBtn(event: Event): void {
   selectedAnswer?.classList.add('choosen');
 }
 
-
 export function startPage() {
-    userContainer.classList.add('hidden');
-    playerPoints.classList.add('hidden');
-    endGameSection.classList.add('hidden');
-    startSection.classList.remove('hidden');
-      newGameBtn.disabled = false;
-      playerPoints.innerHTML = '';
-      playerNameSpan.innerHTML = '';
+  userContainer.classList.add('hidden');
+  playerPoints.classList.add('hidden');
+  endGameSection.classList.add('hidden');
+  startSection.classList.remove('hidden');
+  newGameBtn.disabled = false;
+  playerPoints.innerHTML = '';
+  playerNameSpan.innerHTML = '';
 }
 
 export function playAgainPage() {

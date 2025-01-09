@@ -1,39 +1,38 @@
+import { createNewPlayer, getCurrentPlayer } from './player';
+import { resetCurrentQuestionIndex } from './nextQuestion';
+import { resetPlayer } from './resetPlayer';
+import { resetTimer, startCountdown, startTimer } from './timers';
+import { playAgainPage } from './classList';
+import { selectedQuestions, setSelectedQuestions } from './playGame';
+import { questions } from '../models/IQuiz';
+import { getRandomQuestions } from './shuffleQuestionArray';
 
-import { createNewPlayer, getCurrentPlayer } from "./player";
-import { resetCurrentQuestionIndex } from "./nextQuestion";
-import { resetPlayer } from "./resetPlayer";
-import { resetTimer, startCountdown, startTimer } from "./timers"
-import { playAgainPage } from "./classList";
-import { selectedQuestions, setSelectedQuestions } from "./playGame";
-import { questions } from "../models/IQuiz";
-import { getRandomQuestions } from "./shuffleQuestionArray";
-
+export const totalQuestions = 10;
 
 export function playAgain() {
   const player = getCurrentPlayer();
 
   resetCurrentQuestionIndex();
-  setSelectedQuestions(getRandomQuestions(questions, 10)); 
+  setSelectedQuestions(getRandomQuestions(questions, totalQuestions));
 
   resetPlayer();
 
-  if(player) {
-    createNewPlayer(player.playerName)
+  if (player) {
+    createNewPlayer(player.playerName);
   }
 
   const questionContainer = document.querySelector('#questionContainer');
   if (questionContainer) {
-    questionContainer.innerHTML = ''; 
+    questionContainer.innerHTML = '';
   }
 
   const countdownElement = document.querySelector('#countdown');
   if (countdownElement) {
-    countdownElement.classList.remove('hidden');  
+    countdownElement.classList.remove('hidden');
   }
   startCountdown(selectedQuestions);
   startTimer();
 
   resetTimer();
   playAgainPage();
-
 }

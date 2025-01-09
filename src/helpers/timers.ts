@@ -64,7 +64,6 @@ export function formatTime(seconds: number): string {
   return `${formattedHours}:${formattedMinutes}:${formattedSeconds}`;
 }
 
-
 export function resetTimer() {
   if (timerInterval) {
     clearInterval(timerInterval);

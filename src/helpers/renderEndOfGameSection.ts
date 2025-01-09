@@ -23,16 +23,13 @@ export function renderEndOfGameSection() {
       Vill du se rätt svar?
     </div>
     `;
-    
+
     const highscoreBtn: HTMLButtonElement = document.querySelector('#showhighscoreBtn')!;
     const playAgainBtn: HTMLButtonElement = document.querySelector('#playAgainBtn')!;
     const resetBtn: HTMLButtonElement = document.querySelector('#resetBtn')!;
 
     playAgainBtn.addEventListener('click', playAgain);
     highscoreBtn.addEventListener('click', highscore);
-    resetBtn.addEventListener('click', resetGame)
-
+    resetBtn.addEventListener('click', resetGame);
   }
 }
-
-

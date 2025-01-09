@@ -5,14 +5,12 @@ import { createCodeBlock } from './createCodeBlock';
 import { getCurrentPlayer } from './player';
 import { nextQuestion } from './nextQuestion';
 
-
-
 export function renderQuestion(selectedQuestions: IQuizQuestion[], questionIndex: number) {
   console.log(selectedQuestions[questionIndex]);
   userContainer.classList.remove('hidden');
   playerPoints.classList.remove('hidden');
   const player = getCurrentPlayer();
-  console.log('pointsssss is', player?.quizPoints)
+  console.log('pointsssss is', player?.quizPoints);
   playerPoints.innerHTML = `Poäng: ${player?.quizPoints}`;
   const questionContainer = document.querySelector('#questionContainer');
   const question = selectedQuestions[questionIndex];

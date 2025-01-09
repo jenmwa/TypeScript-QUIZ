@@ -1,4 +1,3 @@
-
 export let playerName: string = '';
 
 export function checkNameInput() {
@@ -13,9 +12,7 @@ export function checkNameInput() {
     }
 
     playerName = nameInput.value;
-    
   } else {
     console.error('nameInput or playGameBtn element not found in checkNameInput');
   }
- 
 }

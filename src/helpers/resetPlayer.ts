@@ -1,10 +1,8 @@
-import { getCurrentPlayer } from "./player";
-
-
+import { getCurrentPlayer } from './player';
 
 export function resetPlayer() {
   const player = getCurrentPlayer();
   if (player) {
-    player.quizPoints = 0;  
+    player.quizPoints = 0;
   }
 }

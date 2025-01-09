@@ -1,14 +1,10 @@
-
-
 import { IQuizQuestion } from '../models/IQuiz';
 import { getCurrentPlayer } from './player';
-
-
 
 export function countPoints(selectedQuestions: IQuizQuestion[], questionIndex: number) {
   const player = getCurrentPlayer();
   if (!player) {
-    console.error("Ingen spelare är skapad.");
+    console.error('Ingen spelare är skapad.');
     return;
   }
 

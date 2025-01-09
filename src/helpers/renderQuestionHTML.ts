@@ -5,8 +5,6 @@ import { createCodeBlock } from './createCodeBlock';
 import { nextQuestion } from './nextQuestion';
 import { player } from './playGame';
 
-//REFAKTORERA
-
 
 
 export function renderQuestion(selectedQuestions: IQuizQuestion[], questionIndex: number) {

@@ -14,7 +14,6 @@ export function endOfGame() {
 
   if (player) {
     player.time = formattedTime;
-    console.log(player);
   }
 
   gameSection.classList.add('hidden');

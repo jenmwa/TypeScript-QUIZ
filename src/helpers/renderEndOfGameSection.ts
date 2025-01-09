@@ -14,7 +14,7 @@ export function renderEndOfGameSection() {
     </p>
     <div>
       <button class="button play-again" id="playAgainBtn">Spela igen</button>
-      <button class="button highscore-btn" id="highscoreBtn">Highscore</button>
+      <button class="button highscore-btn" id="showhighscoreBtn">Visa Highscore</button>
       <button class="button reset-btn" id="resetBtn">Börja om från början</button>
     </div>
     <div>
@@ -22,15 +22,13 @@ export function renderEndOfGameSection() {
     </div>
     `;
     
-    const highscoreBtn: HTMLButtonElement = document.querySelector('#highscoreBtn')!;
+    const highscoreBtn: HTMLButtonElement = document.querySelector('#showhighscoreBtn')!;
     const playAgainBtn: HTMLButtonElement = document.querySelector('#playAgainBtn')!;
     const resetBtn: HTMLButtonElement = document.querySelector('#resetBtn')!;
 
     playAgainBtn.addEventListener('click', playAgain);
     highscoreBtn.addEventListener('click', highscore);
     resetBtn.addEventListener('click', resetGame)
-    
-
 
   }
 }

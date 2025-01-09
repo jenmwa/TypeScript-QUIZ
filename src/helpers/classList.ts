@@ -1,5 +1,5 @@
-import { highscoreSection } from "../main";
-import { renderHighscoreSection } from "./renderHighScoreHTML";
+import { userContainer, playerPoints, endGameSection, startSection, newGameBtn, playerNameSpan } from "../main";
+
 
 export function selectedRadioBtn(event: Event): void {
   const inputElement = event.target as HTMLInputElement;
@@ -16,8 +16,12 @@ export function selectedRadioBtn(event: Event): void {
 }
 
 
-export function highscore() {
-  console.log('show highscore!');
-  highscoreSection?.classList.remove('hidden');
-  renderHighscoreSection();
+export function startPage() {
+    userContainer.classList.add('hidden');
+    playerPoints.classList.add('hidden');
+    endGameSection.classList.add('hidden');
+    startSection.classList.remove('hidden');
+      newGameBtn.disabled = false;
+      playerPoints.innerHTML = '';
+      playerNameSpan.innerHTML = '';
 }

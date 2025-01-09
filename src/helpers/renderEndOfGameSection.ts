@@ -1,10 +1,12 @@
 import { endGameSection } from '../main';
-import { player } from './playGame';
 import { playAgain } from './playAgain';
-import { highscore } from './classList';
+
 import { resetGame } from './resetGame';
+import { highscore } from './renderHighScoreHTML';
+import { getCurrentPlayer } from './player';
 
 export function renderEndOfGameSection() {
+  const player = getCurrentPlayer();
   if (endGameSection) {
     endGameSection.innerHTML = `
      <p>

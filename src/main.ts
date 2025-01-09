@@ -1,4 +1,5 @@
-import { highscore } from './helpers/classList';
+
+import { highscore } from './helpers/renderHighScoreHTML';
 import { newGame } from './helpers/renderNewGameHTML';
 import './style.scss';
 
@@ -22,9 +23,9 @@ export const playerPoints: HTMLSpanElement = document.querySelector('#playerPoin
 
 export const highscoreContainer: HTMLDivElement = document.querySelector('#highscoreContainer')!;
 export const nextQuestionBtn: HTMLButtonElement = document.querySelector('#nextQuestionBtn')!;
-export const playerNameSpan = document.querySelector('#playerName');
+export const playerNameSpan = document.querySelector('#playerName')!;
 export const timerDisplay = document.querySelector('#timerDisplay')!;
-export const quizContainer = document.querySelector('#quiz-container');
+export const quizContainer = document.querySelector('#quiz-container')!;
 export const endGameSection = document.querySelector('#endGameSection')!;
 
 //*

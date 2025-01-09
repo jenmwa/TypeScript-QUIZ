@@ -1,9 +1,11 @@
 import { endGameSection, gameSection } from '../main';
-import { player } from './playGame';
+import { getCurrentPlayer } from './player';
+
 import { renderEndOfGameSection } from './renderEndOfGameSection';
 import { formatTime, timeLeft, timerInterval } from './timers';
 
 export function endOfGame() {
+  const player = getCurrentPlayer();
   endGameSection.classList.remove('hidden');
 
   if (timerInterval !== null) {

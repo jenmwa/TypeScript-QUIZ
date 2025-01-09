@@ -1,12 +1,18 @@
 
 
 import { IQuizQuestion } from '../models/IQuiz';
-import { player } from './playGame';
+import { getCurrentPlayer } from './player';
+
 
 
 export function countPoints(selectedQuestions: IQuizQuestion[], questionIndex: number) {
-  const question = selectedQuestions[questionIndex];
+  const player = getCurrentPlayer();
+  if (!player) {
+    console.error("Ingen spelare är skapad.");
+    return;
+  }
 
+  const question = selectedQuestions[questionIndex];
   const selectedAnswer: HTMLInputElement = document.querySelector(`input[name="question${question.id}"]:checked`)!;
 
   if (selectedAnswer) {

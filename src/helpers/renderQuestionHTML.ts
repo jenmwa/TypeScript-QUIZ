@@ -2,8 +2,8 @@ import { playerPoints, userContainer } from '../main';
 import { IQuizQuestion } from '../models/IQuiz';
 import { selectedRadioBtn } from './classList';
 import { createCodeBlock } from './createCodeBlock';
+import { getCurrentPlayer } from './player';
 import { nextQuestion } from './nextQuestion';
-import { player } from './playGame';
 
 
 
@@ -11,7 +11,9 @@ export function renderQuestion(selectedQuestions: IQuizQuestion[], questionIndex
   console.log(selectedQuestions[questionIndex]);
   userContainer.classList.remove('hidden');
   playerPoints.classList.remove('hidden');
-  playerPoints.innerHTML = `Poäng: ${String(player?.quizPoints)}`;
+  const player = getCurrentPlayer();
+  console.log('pointsssss is', player?.quizPoints)
+  playerPoints.innerHTML = `Poäng: ${player?.quizPoints}`;
   const questionContainer = document.querySelector('#questionContainer');
   const question = selectedQuestions[questionIndex];
 

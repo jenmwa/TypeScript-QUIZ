@@ -18,6 +18,6 @@ export function endOfGame() {
     console.log(player);
   }
   // gameSection.innerHTML = '';
-  gameSection.classList.add('hidden')
-  renderEndOfGameSection()
+  gameSection.classList.add('hidden');
+  renderEndOfGameSection();
 }

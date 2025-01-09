@@ -4,6 +4,6 @@ export class Player {
     public playerName: string,
     public quizPoints: number,
     public time: string,
-    public date: string,
+    public date: string
   ) {}
 }

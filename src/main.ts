@@ -23,7 +23,7 @@ export const nextQuestionBtn: HTMLButtonElement = document.querySelector('#nextQ
 export const playerNameSpan = document.querySelector('#playerName');
 export const timerDisplay = document.querySelector('#timerDisplay')!;
 export const quizContainer = document.querySelector('#quiz-container');
-export const endGameSection = document.querySelector('#endGameSection')
+export const endGameSection = document.querySelector('#endGameSection');
 
 //*
 //
@@ -36,7 +36,7 @@ function closeHighscoreModule() {
   highscoreSection?.classList.add('hidden');
 }
 
-function highscore() {
+export function highscore() {
   console.log('show highscore!');
   highscoreSection?.classList.remove('hidden');
   renderHighscoreSection();

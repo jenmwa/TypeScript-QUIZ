@@ -63,3 +63,17 @@ export function formatTime(seconds: number): string {
 
   return `${formattedHours}:${formattedMinutes}:${formattedSeconds}`;
 }
+
+
+export function resetTimer() {
+  // Stopp timerintervallet om det är aktivt
+  if (timerInterval) {
+    clearInterval(timerInterval);
+  }
+  
+  // Sätt tillbaka timeLeft till 0
+  timeLeft = 0;
+  
+  // Uppdatera timerdisplayen till 00:00:00
+  updateTimerDisplay();
+}

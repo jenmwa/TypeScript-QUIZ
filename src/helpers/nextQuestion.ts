@@ -5,16 +5,18 @@ import { renderQuestion } from './renderQuestionHTML';
 
 export let currentQuestionIndex = 0;
 
-export function nextQuestion(): void {
-  console.log('Next question');
+export function resetCurrentQuestionIndex() {
+  currentQuestionIndex = 0;
+}
 
+export function nextQuestion(): void {
   countPoints(selectedQuestions, currentQuestionIndex);
 
   currentQuestionIndex++;
   if (currentQuestionIndex < selectedQuestions.length) {
     renderQuestion(selectedQuestions, currentQuestionIndex);
   } else {
-    console.log('Game Over! No more questions.');
     endOfGame();
   }
 }
+

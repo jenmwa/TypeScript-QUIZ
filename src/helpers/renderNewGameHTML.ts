@@ -1,8 +1,14 @@
-import { gameSection, newGameBtn } from '../main';
+import { gameSection, newGameBtn, startSection } from '../main';
 import { checkNameInput } from './checkNameInput';
 import { playGame } from './playGame';
+// import { playGame } from './playGame';
 
 export function newGame() {
+  startSection.classList.add('hidden');
+  gameSection.classList.remove('hidden');
+
+
+
   if (gameSection) {
     gameSection.innerHTML = `
       <div class="userNameContainer">

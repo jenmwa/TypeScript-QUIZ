@@ -1,10 +1,10 @@
 import { endGameSection } from '../main';
 import { player } from './playGame';
-import { highscore } from '../main';
 import { playAgain } from './playAgain';
+import { highscore } from './classList';
+import { resetGame } from './resetGame';
 
 export function renderEndOfGameSection() {
-  console.log('render: Congrats userName, you finished the quiz in xx:xx:xx and got xx points!');
   if (endGameSection) {
     endGameSection.innerHTML = `
      <p>
@@ -15,6 +15,7 @@ export function renderEndOfGameSection() {
     <div>
       <button class="button play-again" id="playAgainBtn">Spela igen</button>
       <button class="button highscore-btn" id="highscoreBtn">Highscore</button>
+      <button class="button reset-btn" id="resetBtn">Börja om från början</button>
     </div>
     <div>
       Vill du se rätt svar?
@@ -23,10 +24,11 @@ export function renderEndOfGameSection() {
     
     const highscoreBtn: HTMLButtonElement = document.querySelector('#highscoreBtn')!;
     const playAgainBtn: HTMLButtonElement = document.querySelector('#playAgainBtn')!;
+    const resetBtn: HTMLButtonElement = document.querySelector('#resetBtn')!;
 
     playAgainBtn.addEventListener('click', playAgain);
-
     highscoreBtn.addEventListener('click', highscore);
+    resetBtn.addEventListener('click', resetGame)
     
 
 

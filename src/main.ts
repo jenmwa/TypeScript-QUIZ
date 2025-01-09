@@ -1,4 +1,4 @@
-import { renderHighscoreSection } from './helpers/renderHighScoreHTML';
+import { highscore } from './helpers/classList';
 import { newGame } from './helpers/renderNewGameHTML';
 import './style.scss';
 
@@ -9,10 +9,12 @@ import './style.scss';
 //
 // *
 
+export const startSection: HTMLElement = document.querySelector('#startSection')!;
+export const userContainer: HTMLDivElement = document.querySelector('#userContainer')!;
 export const newGameBtn: HTMLButtonElement = document.querySelector('#newGameBtn')!;
 export const gameSection: HTMLElement = document.querySelector('#gameSection')!;
 const highscoreBtn: HTMLButtonElement = document.querySelector('#highscoreBtn')!;
-const highscoreSection: HTMLElement = document.querySelector('#highscoreSection')!;
+export const highscoreSection: HTMLElement = document.querySelector('#highscoreSection')!;
 const closeHighscoreBtn: HTMLButtonElement = document.querySelector('#closeHighscoreBtn')!;
 export const playerPoints: HTMLSpanElement = document.querySelector('#playerPoints')!;
 
@@ -23,7 +25,7 @@ export const nextQuestionBtn: HTMLButtonElement = document.querySelector('#nextQ
 export const playerNameSpan = document.querySelector('#playerName');
 export const timerDisplay = document.querySelector('#timerDisplay')!;
 export const quizContainer = document.querySelector('#quiz-container');
-export const endGameSection = document.querySelector('#endGameSection');
+export const endGameSection = document.querySelector('#endGameSection')!;
 
 //*
 //
@@ -36,11 +38,7 @@ function closeHighscoreModule() {
   highscoreSection?.classList.add('hidden');
 }
 
-export function highscore() {
-  console.log('show highscore!');
-  highscoreSection?.classList.remove('hidden');
-  renderHighscoreSection();
-}
+
 
 //*
 //

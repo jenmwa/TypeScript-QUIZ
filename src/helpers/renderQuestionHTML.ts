@@ -1,10 +1,14 @@
+import { userContainer } from '../main';
 import { IQuizQuestion } from '../models/IQuiz';
 import { selectedRadioBtn } from './classList';
 import { createCodeBlock } from './createCodeBlock';
 import { nextQuestion } from './nextQuestion';
 
+//REFAKTORERA
+
 export function renderQuestion(selectedQuestions: IQuizQuestion[], questionIndex: number) {
   console.log(selectedQuestions[questionIndex]);
+  userContainer.classList.remove('hidden');
   const questionContainer = document.querySelector('#questionContainer');
   const question = selectedQuestions[questionIndex];
 

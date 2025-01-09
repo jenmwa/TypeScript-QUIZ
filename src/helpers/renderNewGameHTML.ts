@@ -1,13 +1,10 @@
-import { gameSection, newGameBtn, startSection } from '../main';
+import { gameSection, startSection } from '../main';
 import { checkNameInput } from './checkNameInput';
 import { playGame } from './playGame';
-// import { playGame } from './playGame';
 
 export function newGame() {
   startSection.classList.add('hidden');
   gameSection.classList.remove('hidden');
-
-
 
   if (gameSection) {
     gameSection.innerHTML = `
@@ -32,15 +29,14 @@ export function newGame() {
     const userNameContainer: HTMLDivElement = document.querySelector('.userNameContainer')!;
 
     if (nameInput && playGameBtn && playGameContainer && userNameContainer) {
-      console.log('input element, playGameBtn, playGameContainer, and userNameContainer exist');
       nameInput.addEventListener('input', checkNameInput);
       playGameBtn.addEventListener('click', playGame);
     } else {
-      console.error('One or more elements not found after HTML injection');
+      console.error('One or more elements not found');
     }
 
-    if (newGameBtn) {
-      newGameBtn.disabled = true;
-    }
+    // if (newGameBtn) {
+    //   newGameBtn.disabled = true;
+    // }
   }
 }

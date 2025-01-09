@@ -1,7 +1,8 @@
-import { playerPoints } from '../main';
-import { IQuizQuestion } from '../models/IQuiz';
 
-export let quizPoints = 0;
+
+import { IQuizQuestion } from '../models/IQuiz';
+import { player } from './playGame';
+
 
 export function countPoints(selectedQuestions: IQuizQuestion[], questionIndex: number) {
   const question = selectedQuestions[questionIndex];
@@ -12,11 +13,10 @@ export function countPoints(selectedQuestions: IQuizQuestion[], questionIndex: n
     const correctAnswer = [question.answer1, question.answer2, question.answer3].find(answer => answer.isCorrect);
 
     if (correctAnswer && selectedAnswer.value === correctAnswer.optionText) {
-      quizPoints++;
+      if (player) player.quizPoints++;
     } else {
-      quizPoints--;
+      if (player) player.quizPoints--;
     }
-    console.log(`Poäng: ${quizPoints}`);
-    playerPoints.innerHTML = 'poäng: ' + String(quizPoints);
+    console.log(`Poäng: ${player?.quizPoints}`);
   }
 }

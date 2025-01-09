@@ -1,10 +1,10 @@
-import { gameSection } from '../main';
-import { quizPoints } from './countPoints';
+import { endGameSection, gameSection } from '../main';
 import { player } from './playGame';
 import { renderEndOfGameSection } from './renderEndOfGameSection';
 import { formatTime, timeLeft, timerInterval } from './timers';
 
 export function endOfGame() {
+  endGameSection.classList.remove('hidden');
 
   if (timerInterval !== null) {
     clearInterval(timerInterval);
@@ -13,7 +13,6 @@ export function endOfGame() {
   const formattedTime = formatTime(timeLeft);
 
   if (player) {
-    player.quizPoints = quizPoints;
     player.time = formattedTime;
     console.log(player);
   }

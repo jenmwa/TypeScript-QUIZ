@@ -1,14 +1,19 @@
-import { userContainer } from '../main';
+import { playerPoints, userContainer } from '../main';
 import { IQuizQuestion } from '../models/IQuiz';
 import { selectedRadioBtn } from './classList';
 import { createCodeBlock } from './createCodeBlock';
 import { nextQuestion } from './nextQuestion';
+import { player } from './playGame';
 
 //REFAKTORERA
+
+
 
 export function renderQuestion(selectedQuestions: IQuizQuestion[], questionIndex: number) {
   console.log(selectedQuestions[questionIndex]);
   userContainer.classList.remove('hidden');
+  playerPoints.classList.remove('hidden');
+  playerPoints.innerHTML = `Poäng: ${String(player?.quizPoints)}`;
   const questionContainer = document.querySelector('#questionContainer');
   const question = selectedQuestions[questionIndex];
 

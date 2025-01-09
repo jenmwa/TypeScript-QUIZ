@@ -1,5 +1,8 @@
 import { endGameSection, newGameBtn, playerNameSpan, playerPoints, startSection, userContainer } from "../main";
 import { resetCurrentQuestionIndex } from "./nextQuestion";
+import { resetPlayer } from "./playGame";
+
+
 import { resetTimer } from "./timers";
 
 
@@ -13,14 +16,12 @@ export function resetGame() {
   newGameBtn.disabled = false;
   playerPoints.innerHTML = '';
   playerNameSpan!.innerHTML = '';
-  //nollställ timer 
-  //ta bort timer HTML
-  //nollställ poäng
-  //ta bort poäng HTML
-  //ta bort 
-  //resetta objectet player
+
   resetTimer();
   resetCurrentQuestionIndex();
+
+  resetPlayer();
+
 
 
 }

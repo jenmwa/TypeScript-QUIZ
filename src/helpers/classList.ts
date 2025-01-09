@@ -1,4 +1,4 @@
-import { userContainer, playerPoints, endGameSection, startSection, newGameBtn, playerNameSpan } from "../main";
+import { userContainer, playerPoints, endGameSection, startSection, newGameBtn, playerNameSpan, gameSection } from "../main";
 
 
 export function selectedRadioBtn(event: Event): void {
@@ -24,4 +24,10 @@ export function startPage() {
       newGameBtn.disabled = false;
       playerPoints.innerHTML = '';
       playerNameSpan.innerHTML = '';
+}
+
+export function playAgainPage() {
+  endGameSection.classList.add('hidden');
+  gameSection.classList.remove('hidden');
+  playerPoints.innerHTML = '';
 }

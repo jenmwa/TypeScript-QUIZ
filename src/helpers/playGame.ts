@@ -9,6 +9,10 @@ import { startCountdown, startTimer } from './timers';
 
 export let selectedQuestions: IQuizQuestion[] = [];
 
+export function setSelectedQuestions(questions: IQuizQuestion[]): void {
+  selectedQuestions = questions;
+}
+
 export function playGame() {
 
   const userNameContainer: HTMLDivElement = document.querySelector('.userNameContainer')!;

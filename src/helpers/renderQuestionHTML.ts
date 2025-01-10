@@ -1,16 +1,19 @@
-import { playerPoints, progressBarContainer, userContainer } from '../main';
+import { overviewContainer, playerPoints, progressBarContainer, questionOverview, totalQuestions, userContainer } from '../main';
 import { IQuizQuestion } from '../models/IQuiz';
 import { selectedRadioBtn } from './classList';
 import { createCodeBlock } from './createCodeBlock';
 import { getCurrentPlayer } from './player';
 import { nextQuestion } from './nextQuestion';
 
+
 export function renderQuestion(selectedQuestions: IQuizQuestion[], questionIndex: number) {
   console.log(selectedQuestions[questionIndex]);
   userContainer.classList.remove('hidden');
   playerPoints.classList.remove('hidden');
+  overviewContainer.classList.remove('hidden');
   progressBarContainer.classList.remove('hidden');
   const player = getCurrentPlayer();
+  questionOverview.innerHTML =`Fråga ${questionIndex + 1} av ${totalQuestions}`;
   playerPoints.innerHTML = `Poäng: ${player?.quizPoints}`;
   const questionContainer = document.querySelector('#questionContainer');
   const question = selectedQuestions[questionIndex];

@@ -11,14 +11,3 @@ export function createNewPlayer(name: string): Player {
 export function getCurrentPlayer(): Player | null {
   return currentPlayer;
 }
-
-// export function updatePlayer(name?: string, score?: number, time?: string): Player | null {
-//   if (currentPlayer) {
-//     if (name) currentPlayer.playerName = name;
-//     if (score !== undefined) currentPlayer.quizPoints = score;
-//     if (time) currentPlayer.time = time;
-
-//     return currentPlayer;
-//   }
-//   return null;  // Om ingen spelare finns
-// }

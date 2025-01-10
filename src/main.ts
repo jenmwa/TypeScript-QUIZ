@@ -8,6 +8,7 @@ import './style.scss';
 // VARIABLES
 //
 // *
+export const totalQuestions = 10;
 
 export const startSection: HTMLElement = document.querySelector('#startSection')!;
 export const userContainer: HTMLDivElement = document.querySelector('#userContainer')!;
@@ -17,14 +18,13 @@ const highscoreBtn: HTMLButtonElement = document.querySelector('#highscoreBtn')!
 export const highscoreSection: HTMLElement = document.querySelector('#highscoreSection')!;
 const closeHighscoreBtn: HTMLButtonElement = document.querySelector('#closeHighscoreBtn')!;
 export const playerPoints: HTMLSpanElement = document.querySelector('#playerPoints')!;
-
-// const playGameContainer: HTMLDivElement = document.querySelector('#playGameContainer')!;
-export const progressBarContainer = document.querySelector('#progressBarContainer')!;
-
+export const overviewContainer: HTMLDivElement = document.querySelector('#overviewContainer')!;
+export const progressBarContainer:HTMLDivElement = document.querySelector('#progressBarContainer')!;
+export const questionOverview: HTMLDivElement = document.querySelector('#questionOverview')!;
 export const highscoreContainer: HTMLDivElement = document.querySelector('#highscoreContainer')!;
 export const nextQuestionBtn: HTMLButtonElement = document.querySelector('#nextQuestionBtn')!;
-export const playerNameSpan = document.querySelector('#playerName')!;
-export const timerDisplay = document.querySelector('#timerDisplay')!;
+export const playerNameSpan: HTMLSpanElement = document.querySelector('#playerName')!;
+export const timerDisplay: HTMLSpanElement = document.querySelector('#timerDisplay')!;
 export const quizContainer = document.querySelector('#quiz-container')!;
 export const endGameSection = document.querySelector('#endGameSection')!;
 

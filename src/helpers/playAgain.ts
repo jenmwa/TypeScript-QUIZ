@@ -6,9 +6,10 @@ import { playAgainPage } from './classList';
 import { selectedQuestions, setSelectedQuestions } from './playGame';
 import { questions } from '../models/IQuiz';
 import { getRandomQuestions } from './shuffleQuestionArray';
-import { resetProgressBar } from './updateProgressBar';
+import {  updateProgressBar } from './updateProgressBar';
+import { totalQuestions } from '../main';
 
-export const totalQuestions = 10;
+
 
 export function playAgain() {
   const player = getCurrentPlayer();
@@ -34,6 +35,6 @@ export function playAgain() {
   startCountdown(selectedQuestions);
   startTimer();
   resetTimer();
-  resetProgressBar();
+  updateProgressBar();
   playAgainPage();
 }

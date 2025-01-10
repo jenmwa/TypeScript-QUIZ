@@ -1,4 +1,4 @@
-import { endGameSection, gameSection } from '../main';
+import { endGameSection, gameSection, overviewContainer } from '../main';
 import { getCurrentPlayer } from './player';
 
 import { renderEndOfGameSection } from './renderEndOfGameSection';
@@ -19,5 +19,6 @@ export function endOfGame() {
   }
 
   gameSection.classList.add('hidden');
+  overviewContainer.classList.add('hidden');
   renderEndOfGameSection();
 }

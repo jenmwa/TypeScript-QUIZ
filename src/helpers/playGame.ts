@@ -1,6 +1,7 @@
+import { totalQuestions } from '../main';
 import { IQuizQuestion, questions } from '../models/IQuiz';
 import { playerName } from './checkNameInput';
-import { totalQuestions } from './playAgain';
+
 import { createNewPlayer } from './player';
 import { getRandomQuestions } from './shuffleQuestionArray';
 import { startCountdown, startTimer } from './timers';
@@ -19,7 +20,6 @@ export function playGame() {
   createNewPlayer(playerName);
 
   const playGameContainer: HTMLDivElement = document.querySelector('#playGameContainer')!;
-  // const userNameContainer: HTMLDivElement = document.querySelector('#userContainer')!;
 
   if (playGameContainer && userNameContainer) {
     playGameContainer.classList.add('hidden');

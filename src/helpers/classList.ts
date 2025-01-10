@@ -6,7 +6,6 @@ import {
   newGameBtn,
   playerNameSpan,
   gameSection,
-  progressBarContainer,
 } from '../main';
 
 export function selectedRadioBtn(event: Event): void {
@@ -36,5 +35,6 @@ export function startPage() {
 export function playAgainPage() {
   endGameSection.classList.add('hidden');
   gameSection.classList.remove('hidden');
+  userContainer.classList.add('hidden');
   playerPoints.innerHTML = '';
 }

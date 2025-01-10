@@ -6,13 +6,12 @@ import {
   newGameBtn,
   playerNameSpan,
   gameSection,
+  overviewContainer,
+  progressBarContainer,
 } from '../main';
 
 export function selectedRadioBtn(event: Event): void {
   const inputElement = event.target as HTMLInputElement;
-
-  const selectedOption = inputElement.value;
-  console.log('Vald option:', selectedOption);
 
   document.querySelectorAll('.answer-option-label').forEach(answer => {
     answer.classList.remove('choosen');
@@ -37,4 +36,11 @@ export function playAgainPage() {
   gameSection.classList.remove('hidden');
   userContainer.classList.add('hidden');
   playerPoints.innerHTML = '';
+}
+
+export function questionPage() {
+  userContainer.classList.remove('hidden');
+  playerPoints.classList.remove('hidden');
+  overviewContainer.classList.remove('hidden');
+  progressBarContainer.classList.remove('hidden');
 }

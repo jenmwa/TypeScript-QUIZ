@@ -12,9 +12,9 @@ export function renderEndOfGameSection() {
   if (endGameSection) {
     endGameSection.innerHTML = `
      <p>
-      <span class="congrats">Congrats</span> 
+      <span class="congrats">GRATTIS</span> 
       <span class="player-name">${player?.playerName}</span>, 
-      you finished the quiz in ${player?.time} and got ${player?.quizPoints} points! 🎉
+      Du klarade quizzet på ${player?.time} och fick ${player?.quizPoints} poäng! 🎉
     </p>
     <div>
       <button class="button play-again" id="playAgainBtn">Spela igen</button>

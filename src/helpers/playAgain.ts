@@ -6,17 +6,13 @@ import { playAgainPage } from './classList';
 import { selectedQuestions, setSelectedQuestions } from './playGame';
 import { questions } from '../models/IQuiz';
 import { getRandomQuestions } from './shuffleQuestionArray';
-import {  updateProgressBar } from './updateProgressBar';
+import { updateProgressBar } from './updateProgressBar';
 import { totalQuestions } from '../main';
-
-
 
 export function playAgain() {
   const player = getCurrentPlayer();
-
   resetCurrentQuestionIndex();
   setSelectedQuestions(getRandomQuestions(questions, totalQuestions));
-
   resetPlayer();
 
   if (player) {

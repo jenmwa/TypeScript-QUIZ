@@ -1,7 +1,6 @@
 import { totalQuestions } from '../main';
 import { IQuizQuestion, questions } from '../models/IQuiz';
 import { playerName } from './checkNameInput';
-
 import { createNewPlayer } from './player';
 import { getRandomQuestions } from './shuffleQuestionArray';
 import { startCountdown, startTimer } from './timers';

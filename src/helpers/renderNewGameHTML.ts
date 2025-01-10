@@ -34,9 +34,5 @@ export function newGame() {
     } else {
       console.error('One or more elements not found');
     }
-
-    // if (newGameBtn) {
-    //   newGameBtn.disabled = true;
-    // }
   }
 }

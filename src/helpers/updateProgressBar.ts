@@ -9,3 +9,11 @@ export function updateProgressBar() {
     progressBar.style.width = progress + '%';
   }
 }
+
+export function resetProgressBar() {
+  const progressBar: HTMLDivElement = document.querySelector('#progressBar')!;
+
+  if (progressBar) {
+    progressBar.style.width = '0%';
+  }
+}

@@ -1,4 +1,4 @@
-import { playerNameSpan, timerDisplay } from '../main';
+import { playerNameSpan, progressBarContainer, timerDisplay } from '../main';
 import { IQuizQuestion } from '../models/IQuiz';
 import { playerName } from './checkNameInput';
 import { renderQuestion } from './renderQuestionHTML';
@@ -7,6 +7,7 @@ export let timerInterval: number | null = null;
 export let timeLeft = 0;
 
 export function startCountdown(selectedQuestions: IQuizQuestion[]) {
+  progressBarContainer.classList.add('hidden');
   const countdownElement = document.querySelector('#countdown');
   let countdown = 3;
   countdownElement!.innerHTML = countdown.toString();

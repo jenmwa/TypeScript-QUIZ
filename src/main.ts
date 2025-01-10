@@ -19,6 +19,7 @@ const closeHighscoreBtn: HTMLButtonElement = document.querySelector('#closeHighs
 export const playerPoints: HTMLSpanElement = document.querySelector('#playerPoints')!;
 
 // const playGameContainer: HTMLDivElement = document.querySelector('#playGameContainer')!;
+export const progressBarContainer = document.querySelector('#progressBarContainer')!;
 
 export const highscoreContainer: HTMLDivElement = document.querySelector('#highscoreContainer')!;
 export const nextQuestionBtn: HTMLButtonElement = document.querySelector('#nextQuestionBtn')!;

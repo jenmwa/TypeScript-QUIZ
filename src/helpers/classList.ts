@@ -6,6 +6,7 @@ import {
   newGameBtn,
   playerNameSpan,
   gameSection,
+  progressBarContainer,
 } from '../main';
 
 export function selectedRadioBtn(event: Event): void {

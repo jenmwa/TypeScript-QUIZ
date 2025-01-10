@@ -1,4 +1,4 @@
-import { endGameSection } from '../main';
+import { endGameSection, playerPoints, progressBarContainer } from '../main';
 import { playAgain } from './playAgain';
 
 import { resetGame } from './resetGame';
@@ -6,6 +6,8 @@ import { highscore } from './renderHighScoreHTML';
 import { getCurrentPlayer } from './player';
 
 export function renderEndOfGameSection() {
+  progressBarContainer.classList.add('hidden');
+  playerPoints.classList.add('hidden');
   const player = getCurrentPlayer();
   if (endGameSection) {
     endGameSection.innerHTML = `

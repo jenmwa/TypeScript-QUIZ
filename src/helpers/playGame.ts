@@ -24,6 +24,7 @@ export function playGame() {
   if (playGameContainer && userNameContainer) {
     playGameContainer.classList.add('hidden');
     userNameContainer.classList.add('hidden');
+
     selectedQuestions = getRandomQuestions(questions, totalQuestions);
     updateProgressBar();
     startCountdown(selectedQuestions);

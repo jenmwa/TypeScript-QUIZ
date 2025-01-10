@@ -2,13 +2,18 @@ import { endGameSection, playerPoints, progressBarContainer } from '../main';
 import { playAgain } from './playAgain';
 
 import { resetGame } from './resetGame';
-import { highscore } from './renderHighScoreHTML';
+import { addHighscore, showHighscore } from './renderHighScoreHTML';
 import { getCurrentPlayer } from './player';
 
 export function renderEndOfGameSection() {
   progressBarContainer.classList.add('hidden');
   playerPoints.classList.add('hidden');
   const player = getCurrentPlayer();
+
+  if(player){
+    addHighscore(player)
+  }
+
   if (endGameSection) {
     endGameSection.innerHTML = `
      <p>
@@ -31,7 +36,7 @@ export function renderEndOfGameSection() {
     const resetBtn: HTMLButtonElement = document.querySelector('#resetBtn')!;
 
     playAgainBtn.addEventListener('click', playAgain);
-    highscoreBtn.addEventListener('click', highscore);
+    highscoreBtn.addEventListener('click', showHighscore);
     resetBtn.addEventListener('click', resetGame);
   }
 }

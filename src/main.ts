@@ -1,4 +1,4 @@
-import { highscore } from './helpers/renderHighScoreHTML';
+import { showHighscore } from './helpers/renderHighScoreHTML';
 import { newGame } from './helpers/renderNewGameHTML';
 import './style.scss';
 
@@ -47,7 +47,7 @@ function closeHighscoreModule() {
 // *
 
 newGameBtn?.addEventListener('click', newGame);
-highscoreBtn?.addEventListener('click', highscore);
+highscoreBtn?.addEventListener('click', showHighscore);
 closeHighscoreBtn?.addEventListener('click', closeHighscoreModule);
 
 // renderQuiz(questions);

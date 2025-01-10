@@ -11,7 +11,6 @@ import { nextQuestion } from './nextQuestion';
 import { shuffle } from './shuffleQuestionArray';
 
 export function renderQuestion(selectedQuestions: IQuizQuestion[], questionIndex: number) {
-  console.log(selectedQuestions[questionIndex]);
   questionPage();
   const player = getCurrentPlayer();
   questionOverview.innerHTML = `Fråga ${questionIndex + 1} av ${totalQuestions}`;

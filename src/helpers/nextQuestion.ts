@@ -12,9 +12,7 @@ export function resetCurrentQuestionIndex() {
 
 export function nextQuestion(): void {
   countPoints(selectedQuestions, currentQuestionIndex);
-
   currentQuestionIndex++;
-
   updateProgressBar();
 
   if (currentQuestionIndex < selectedQuestions.length) {

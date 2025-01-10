@@ -14,9 +14,7 @@ export const startSection: HTMLElement = document.querySelector('#startSection')
 export const userContainer: HTMLDivElement = document.querySelector('#userContainer')!;
 export const newGameBtn: HTMLButtonElement = document.querySelector('#newGameBtn')!;
 export const gameSection: HTMLElement = document.querySelector('#gameSection')!;
-const highscoreBtn: HTMLButtonElement = document.querySelector('#highscoreBtn')!;
 export const highscoreSection: HTMLElement = document.querySelector('#highscoreSection')!;
-const closeHighscoreBtn: HTMLButtonElement = document.querySelector('#closeHighscoreBtn')!;
 export const playerPoints: HTMLSpanElement = document.querySelector('#playerPoints')!;
 export const overviewContainer: HTMLDivElement = document.querySelector('#overviewContainer')!;
 export const progressBarContainer: HTMLDivElement = document.querySelector('#progressBarContainer')!;
@@ -27,6 +25,8 @@ export const playerNameSpan: HTMLSpanElement = document.querySelector('#playerNa
 export const timerDisplay: HTMLSpanElement = document.querySelector('#timerDisplay')!;
 export const quizContainer = document.querySelector('#quiz-container')!;
 export const endGameSection = document.querySelector('#endGameSection')!;
+const highscoreBtn: HTMLButtonElement = document.querySelector('#highscoreBtn')!;
+const closeHighscoreBtn: HTMLButtonElement = document.querySelector('#closeHighscoreBtn')!;
 
 //*
 //

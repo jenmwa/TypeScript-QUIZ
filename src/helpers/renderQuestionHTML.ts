@@ -1,8 +1,4 @@
-import {
-  playerPoints,
-  questionOverview,
-  totalQuestions,
-} from '../main';
+import { playerPoints, questionOverview, totalQuestions } from '../main';
 import { IQuizQuestion } from '../models/IQuiz';
 import { questionPage, selectedRadioBtn } from './classList';
 import { createCodeBlock } from './createCodeBlock';
@@ -29,7 +25,7 @@ export function renderQuestion(selectedQuestions: IQuizQuestion[], questionIndex
   }
 
   const options = [question.answer1.optionText, question.answer2.optionText, question.answer3.optionText];
-  const shuffledOptions = shuffle(options); 
+  const shuffledOptions = shuffle(options);
 
   let optionsHTML = '';
   optionsHTML += '<div class="answers-container">';

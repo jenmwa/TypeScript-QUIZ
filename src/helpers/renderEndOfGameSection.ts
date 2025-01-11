@@ -2,16 +2,17 @@ import { endGameSection, playerPoints, progressBarContainer } from '../main';
 import { playAgain } from './playAgain';
 
 import { resetGame } from './resetGame';
-import { addHighscore, showHighscore } from './renderHighScoreHTML';
+
 import { getCurrentPlayer } from './player';
+import { addHighscore, showHighscore } from './highscore';
 
 export function renderEndOfGameSection() {
   progressBarContainer.classList.add('hidden');
   playerPoints.classList.add('hidden');
   const player = getCurrentPlayer();
 
-  if(player){
-    addHighscore(player)
+  if (player) {
+    addHighscore(player);
   }
 
   if (endGameSection) {

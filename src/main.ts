@@ -1,13 +1,7 @@
-import { showHighscore } from './helpers/renderHighScoreHTML';
 import { newGame } from './helpers/renderNewGameHTML';
+import { closeHighscoreModule, showHighscore } from './helpers/highscore';
 import './style.scss';
 
-//*
-//
-//
-// VARIABLES
-//
-// *
 export const totalQuestions = 10;
 
 export const startSection: HTMLElement = document.querySelector('#startSection')!;
@@ -28,26 +22,6 @@ export const endGameSection = document.querySelector('#endGameSection')!;
 const highscoreBtn: HTMLButtonElement = document.querySelector('#highscoreBtn')!;
 const closeHighscoreBtn: HTMLButtonElement = document.querySelector('#closeHighscoreBtn')!;
 
-//*
-//
-//
-// Functions to-be-cleaned-up
-//
-// *
-
-function closeHighscoreModule() {
-  highscoreSection?.classList.add('hidden');
-}
-
-//*
-//
-//
-// EVENTLISTENERS
-//
-// *
-
 newGameBtn?.addEventListener('click', newGame);
 highscoreBtn?.addEventListener('click', showHighscore);
 closeHighscoreBtn?.addEventListener('click', closeHighscoreModule);
-
-// renderQuiz(questions);

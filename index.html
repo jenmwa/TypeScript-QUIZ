@@ -32,15 +32,24 @@
         <span class="quiz-word"> -quiz</span>
       </div>
     </header>
-    <div class="user-container" id="userContainer"><span id="playerName"></span><span id="timerDisplay"></span></div>
-    <div class="progress-bar-container hidden" id="progressBarContainer">
-      <div class="progress-bar" id="progressBar"></div>
-    </div>
-    <div class="overview-container" id="overviewContainer">
-      <span class="question-overview" id="questionOverview"></span>
-      <span class="player-points" id="playerPoints"></span>
-    </div>
+    <!-- <div class="player-container"> -->
     <main>
+
+      <div class="user-container" id="userContainer">
+        <span id="playerName"></span>
+        <span id="timerDisplay"></span>
+      </div>
+
+    <!-- </div> -->
+      <div class="progress-bar-container hidden" id="progressBarContainer">
+        <div class="progress-bar" id="progressBar"></div>
+      </div>
+
+      <div class="overview-container" id="overviewContainer">
+        <span class="question-overview" id="questionOverview"></span>
+        <span class="player-points" id="playerPoints"></span>
+      </div>
+
       <section class="start-section" id="startSection">
         <span>Välkomna till mitt lilla</span>
         <h1>TypeScript <span class="quiz-word">-Quiz</span></h1>
@@ -61,8 +70,8 @@
           <div class="highscore-container" id="highscoreContainer"></div>
         </div>
       </section>
-      <div id="quiz-container" class="quiz-container"></div>
-      <!-- <footer class="small-text"><span>En liten text om att detta är ett skolarbetsprojekt.,..</span></footer> -->
+      <!-- <div id="quiz-container" class="quiz-container"></div> -->
+      <footer class="small-text"><span>&copy; 2025 jenmwa</span></footer>
     </main>
     <script type="module" src="/src/main.ts"></script>
   </body>

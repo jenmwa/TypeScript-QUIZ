@@ -8,7 +8,7 @@ export function newGame() {
 
   if (gameSection) {
     gameSection.innerHTML = `
-      <div class="userNameContainer">
+      <div class="user-name-container" id="userNameContainer">
         <label>
           <span>Namn:</span>
           <div class="error-div"></div>
@@ -26,7 +26,7 @@ export function newGame() {
     const nameInput: HTMLInputElement = document.querySelector('#nameInput')!;
     const playGameBtn: HTMLButtonElement = document.querySelector('#playGameBtn')!;
     const playGameContainer: HTMLDivElement = document.querySelector('#playGameContainer')!;
-    const userNameContainer: HTMLDivElement = document.querySelector('.userNameContainer')!;
+    const userNameContainer: HTMLDivElement = document.querySelector('#userNameContainer')!;
 
     if (nameInput && playGameBtn && playGameContainer && userNameContainer) {
       nameInput.addEventListener('input', checkNameInput);

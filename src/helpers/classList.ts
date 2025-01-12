@@ -43,4 +43,8 @@ export function questionPage() {
   playerPoints.classList.remove('hidden');
   overviewContainer.classList.remove('hidden');
   progressBarContainer.classList.remove('hidden');
+  const questionContainer = document.querySelector('#questionContainer')!;
+  questionContainer.classList.remove('hidden')
+  const main = document.querySelector('#main');
+  main?.classList.add('border')
 }

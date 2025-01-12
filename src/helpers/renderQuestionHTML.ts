@@ -15,8 +15,10 @@ export function renderQuestion(selectedQuestions: IQuizQuestion[], questionIndex
   const question = selectedQuestions[questionIndex];
 
   let questionHTML = `
+  <div>
     <h2>Fråga ${questionIndex + 1}</h2>
     <p>${question.questionText}</p>
+
   `;
 
   if (question.codeExample) {
@@ -37,10 +39,13 @@ export function renderQuestion(selectedQuestions: IQuizQuestion[], questionIndex
       </label>
     `;
   });
-  optionsHTML += '</div>';
+  optionsHTML += '</div>     </div>';
 
   const userBtn = `
-  <button class="button next-question-btn" id="nextQuestionBtn">NÄSTA FRÅGA</button>`;
+    <div class="next-button-container">
+      <button class="button next-question-btn" id="nextQuestionBtn">NÄSTA FRÅGA</button>
+    </div>
+  `;
 
   questionHTML += optionsHTML += userBtn;
 

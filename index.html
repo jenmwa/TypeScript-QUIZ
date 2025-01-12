@@ -32,7 +32,7 @@
         <span class="quiz-word"> -quiz</span>
       </div>
     </header>
-    <main>
+    <main id="main">
       <div class="user-container" id="userContainer">
         <span id="playerName"></span>
         <span id="timerDisplay"></span>
@@ -41,7 +41,7 @@
         <div class="progress-bar" id="progressBar"></div>
       </div>
 
-      <div class="overview-container" id="overviewContainer">
+      <div class="overview-container hidden" id="overviewContainer">
         <span class="question-overview" id="questionOverview"></span>
         <span class="player-points" id="playerPoints"></span>
       </div>
@@ -66,8 +66,8 @@
           </div>
         </div>
       </section>
-      <section class="game-section" id="gameSection"></section>
-      <section class="end-game-section" id="endGameSection"></section>
+      <section class="game-section hidden" id="gameSection"></section>
+      <section class="end-game-section hidden" id="endGameSection"></section>
       <section class="highscore hidden" id="highscoreSection">
         <div class="container">
           <button class="button" id="closeHighscoreBtn">Tillbaka</button>

@@ -2,5 +2,16 @@
 
 main {
   max-width: 600px;
-  border: 2px solid variables.$white;
+  // border: 2px solid variables.$white;
+  padding-block: 0 2rem;
+  
+}
+
+.question-container {
+  min-height: 61vh;
+
+}
+
+.border {
+  border-inline: 2px solid variables.$white;
 }

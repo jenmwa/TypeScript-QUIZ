@@ -7,6 +7,7 @@ import { getCurrentPlayer } from './player';
 import { addHighscore, showHighscore } from './highscore';
 
 export function renderEndOfGameSection() {
+  endGameSection.classList.remove('hidden');
   progressBarContainer.classList.add('hidden');
   playerPoints.classList.add('hidden');
   const player = getCurrentPlayer();

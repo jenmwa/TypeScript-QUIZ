@@ -1,28 +1,4 @@
-$padding-inline: 2rem;
-$max-width: 400px;
-$primary-color: #3178c6;
-$white: whitesmoke;
-$dark: #00273f;
-
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: $dark;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  position: relative;
-
-  width: 100%;
-  box-sizing: border-box;
-
-}
+@use 'variables';
 
 a {
   font-weight: 500;
@@ -45,36 +21,36 @@ body {
 
 header {
   width: 100%;
-  outline: 2px solid white;
   background-color: #3178c6;
   padding-block: 2rem 1rem;
-
 }
 
 main {
-  // max-width: 400px;
-  outline: 2px solid $white;
   width: 100%;
-  height: 77vh;
-
-  // padding-block: 2rem;
+  min-height: 80vh;
 }
 
 footer {
   height: 2rem;
   width: 100%;
-  background-color: $primary-color;
-  position: absolute;
+  background-color: variables.$primary-color;
+
   bottom: 0;
   left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-  text-align: center;
+// .question-container, .game-section, .start-section, .end-game-section {
+section {
+  padding-inline: variables.$padding-inline;
 }
 
 h1 {
-  text-align: center;
   font-size: 3.2em;
   line-height: 1.1;
+  margin-block: 0.5rem 4rem;
 }
 
 button {
@@ -84,14 +60,14 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: $primary-color;
-  color: $white;
+  background-color: variables.$primary-color;
+  color: variables.$white;
   cursor: pointer;
   transition: border-color 0.25s;
   height: auto;
 
   &:hover {
-    border-color: $white;
+    border-color: variables.$white;
     background-color: #356aa2;
   }
   &:focus,
@@ -111,7 +87,7 @@ input[type='text'] {
 }
 
 //
-//
+// HEADER
 //
 
 .logo-container {
@@ -121,8 +97,23 @@ input[type='text'] {
   margin-bottom: 2rem;
 }
 
+//start-section
+
+.start-section {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+
+  .start-below {
+    .button-container {
+      display: flex;
+      gap: 1rem;
+    }
+  }
+}
+
 .overview-container {
-  margin: $padding-inline;
+  margin: variables.$padding-inline;
   display: flex;
   justify-content: space-between;
 }
@@ -136,14 +127,12 @@ input[type='text'] {
 }
 
 .user-container {
-  background-color: $white;
-  color: $dark;
-  display: flex; 
+  background-color: variables.$white;
+  color: variables.$dark;
+  display: flex;
   justify-content: space-between;
-  padding-inline: $padding-inline;
-
+  padding-inline: variables.$padding-inline;
 }
-
 
 .small-text {
   font-size: small;
@@ -151,7 +140,7 @@ input[type='text'] {
 
 .quiz-container {
   margin: 0 auto;
-  padding-inline: $padding-inline;
+  padding-inline: variables.$padding-inline;
 }
 
 .countdown {
@@ -162,25 +151,26 @@ input[type='text'] {
 }
 
 .highscore-btn {
-  background-color: $white;
-  color: $dark;
+  background-color: variables.$white;
+  color: variables.$dark;
 
   &:hover {
-    border-color: $white;
+    border-color: variables.$white;
     background-color: #eaeaea;
   }
 }
 
-
 .user-name-container {
   width: 100%;
-}
 
-// .question-container, .game-section, .start-section, .end-game-section {
-section {
-  padding-inline: $padding-inline;
-}
+  input {
+    margin-bottom: 2rem;
+  }
 
+  .text-container {
+    margin-bottom: 4rem;
+  }
+}
 
 .answers-container {
   display: flex;
@@ -189,7 +179,7 @@ section {
   label {
     cursor: pointer;
     padding: 0.5rem;
-    outline: 1px solid $white;
+    outline: 1px solid variables.$white;
     border-radius: 4px;
     margin-bottom: 1rem;
 
@@ -208,7 +198,7 @@ section {
 
 //fixa mediaqueries
 .question {
-  border-bottom: 1px solid pink;
+  // border-bottom: 1px solid pink;
   padding-bottom: 2rem;
 
   label {
@@ -219,7 +209,7 @@ section {
 
 .code-block {
   background-color: #201f21;
-  color: $white;
+  color: variables.$white;
   padding: 15px;
   border-radius: 5px;
   overflow-x: auto;
@@ -231,19 +221,17 @@ section {
 .progress-bar-container {
   max-width: 100%;
   height: 10px;
-  background-color: $white;
+  background-color: variables.$white;
   border-radius: 5px;
   margin: 1rem 2rem;
 
   .progress-bar {
     height: 100%;
     width: 0%;
-    background-color: $primary-color;
+    background-color: variables.$primary-color;
     border-radius: 5px;
   }
 }
-
-
 
 .highscore {
   display: block;

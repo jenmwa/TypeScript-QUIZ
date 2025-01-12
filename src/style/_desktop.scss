@@ -1,0 +1,6 @@
+@use 'variables';
+
+main {
+  max-width: 600px;
+  border: 2px solid variables.$white;
+}

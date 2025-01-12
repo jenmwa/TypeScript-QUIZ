@@ -13,7 +13,7 @@ export function setSelectedQuestions(questions: IQuizQuestion[]): void {
 }
 
 export function playGame() {
-  const userNameContainer: HTMLDivElement = document.querySelector('.userNameContainer')!;
+  const userNameContainer: HTMLDivElement = document.querySelector('#userNameContainer')!;
   userNameContainer.classList.add('hidden');
 
   createNewPlayer(playerName);

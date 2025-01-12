@@ -9,12 +9,19 @@ export function newGame() {
   if (gameSection) {
     gameSection.innerHTML = `
       <div class="user-name-container" id="userNameContainer">
+      <div class="small-text text-container">
+        <p>Börja med att välja ett användarnamn.</p>
+        <p>Du får 10 frågor om TypeScript, varje fråga har tre alternativ – men bara ett rätt svar. </p>
+        <p>Svara rätt och snabbt för att samla poäng, men tänk på att fel svar ger minuspoäng!</p> 
+        <p>Dina poäng sparas i localStorage, så rensar du webbläsarens 
+         cache nollställs rankingen. Se om du kan klättra högst upp på highscorelistan! </p>
+         <p>Lycka till!</p>
+      </div>
         <label>
-          <span>Namn:</span>
+          <span>Användarnamn:</span>
           <div class="error-div"></div>
           <input type="text" class="name-input" id="nameInput"></input>
         </label>
-        <p class="small-text">spelregler</p>
       </div>
       <div id="countdown" class="countdown"></div>
       <div id="questionContainer" class="question-container"></div>

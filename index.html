@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="sv">
   <head>
-    <meta charset="UTF-8" />
+    <meta charset="utf-8" />
     <link
       rel="icon"
       href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚀</text></svg>"
@@ -32,15 +32,11 @@
         <span class="quiz-word"> -quiz</span>
       </div>
     </header>
-    <!-- <div class="player-container"> -->
     <main>
-
       <div class="user-container" id="userContainer">
         <span id="playerName"></span>
         <span id="timerDisplay"></span>
       </div>
-
-    <!-- </div> -->
       <div class="progress-bar-container hidden" id="progressBarContainer">
         <div class="progress-bar" id="progressBar"></div>
       </div>
@@ -51,15 +47,24 @@
       </div>
 
       <section class="start-section" id="startSection">
-        <span>Välkomna till mitt lilla</span>
-        <h1>TypeScript <span class="quiz-word">-Quiz</span></h1>
-        <p>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Provident error nam voluptatibus et earum minus
-          cupiditate culpa qui sint sapiente temporibus vero accusantium ipsa odit, id optio nisi laboriosam doloribus.
-        </p>
-        <p>Vad vill du göra?</p>
-        <button class="button new-game" id="newGameBtn">Nytt spel</button>
-        <button class="button highscore-btn" id="highscoreBtn">Highscore</button>
+        <div class="start-upper">
+          <span>Välkomna till mitt lilla</span>
+          <h1>TypeScript <span class="quiz-word">-Quiz</span></h1>
+          <p>
+            Här får du möjlighet att testa dina kunskaper i TypeScript!</p>
+            <p>Här ställs frågor som täcker allt från grundläggande syntax och bas-koncept, och ingen expertkunskap krävs!</p>
+             <p> Oavsett om du är nybörjare eller har erfarenhet 
+              av språket, är detta ett roligt sätt att utmana dig själv och se vad du kan om TypeScript! </p>
+            <p> Lycka till!</p>
+          </p>
+        </div>
+        <div class="start-below">
+          <p>Vad vill du göra?</p>
+          <div class="button-container">
+            <button class="button new-game" id="newGameBtn">Nytt spel</button>
+            <button class="button highscore-btn" id="highscoreBtn">Highscore</button>
+          </div>
+        </div>
       </section>
       <section class="game-section" id="gameSection"></section>
       <section class="end-game-section" id="endGameSection"></section>
@@ -69,10 +74,9 @@
           <h2>Highscore</h2>
           <div class="highscore-container" id="highscoreContainer"></div>
         </div>
-      </section>
-      <!-- <div id="quiz-container" class="quiz-container"></div> -->
-      <footer class="small-text"><span>&copy; 2025 jenmwa</span></footer>
+      </section>     
     </main>
+    <footer class="small-text"><span>&copy; 2025 jenmwa</span></footer>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>

@@ -1,6 +1,6 @@
 import { newGame } from './helpers/renderNewGameHTML';
 import { closeHighscoreModule, showHighscore } from './helpers/highscore';
-import './style.scss';
+import './style/style.scss';
 
 export const totalQuestions = 10;
 

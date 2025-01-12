@@ -49,8 +49,9 @@ export const questions: IQuizQuestion[] = [
   {
     id: 5,
     questionText: 'Vad är resultatet av följande kod?',
-    codeExample: `let value: string | number = "hello"; 
-value = 42;`,
+    codeExample: `
+    let value: string | number = "hello"; 
+    value = 42;`,
     answer1: { optionText: 'string', isCorrect: false },
     answer2: { optionText: 'number', isCorrect: false },
     answer3: { optionText: 'string | number', isCorrect: true },
@@ -104,7 +105,9 @@ value = 42;`,
   {
     id: 9,
     questionText: 'Vilken typ kommer TypeScript att inferera för variabeln x i följande kod?',
-    codeExample: `let x = "hello";`,
+    codeExample: `
+    let x = "hello";
+    `,
     answer1: { optionText: 'string', isCorrect: true },
     answer2: { optionText: 'any', isCorrect: false },
     answer3: { optionText: 'number', isCorrect: false },
@@ -143,9 +146,10 @@ value = 42;`,
   {
     id: 14,
     questionText: 'Vad är typen på följande variabel?',
-    codeExample: `type A = { name: string };
-          type B = { age: number };
-          type C = A & B;`,
+    codeExample: `
+    type A = { name: string };
+    type B = { age: number };
+    type C = A & B;`,
     answer1: { optionText: '{ name: string; age: number }', isCorrect: true },
     answer2: { optionText: '{ name: string } | { age: number }', isCorrect: false },
     answer3: { optionText: '{ name: number; age: number }', isCorrect: false },
@@ -160,9 +164,11 @@ value = 42;`,
   {
     id: 16,
     questionText: 'Vad gör följande TypeScript-funktion?',
-    codeExample: `function identity<T>(arg: T): T {
-  return arg;
-}`,
+    codeExample: `
+    function identity<T>(arg: T): T {
+    return arg;
+    }
+    `,
     answer1: { optionText: 'Returnerar argumentet som typen T.', isCorrect: true },
     answer2: { optionText: 'Returnerar argumentet som typen any.', isCorrect: false },
     answer3: { optionText: 'Returnerar argumentet som en string.', isCorrect: false },
@@ -178,8 +184,11 @@ value = 42;`,
   {
     id: 18,
     questionText: 'Vad kommer att vara typen på name i följande kod?',
-    codeExample: `const user = { name: "Alice", age: 25 };
-const { name } = user;`,
+    codeExample: `
+    const user = { 
+    name: "Alice", age: 25 };
+    const { name } = user;
+    `,
     answer1: { optionText: 'string', isCorrect: true },
     answer2: { optionText: 'number', isCorrect: false },
     answer3: { optionText: '{ name: string; age: number; }', isCorrect: false },

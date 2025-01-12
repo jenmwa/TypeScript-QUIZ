@@ -23,8 +23,10 @@ export function renderEndOfGameSection() {
       Du klarade quizzet på ${player?.time} och fick ${player?.quizPoints} poäng! 🎉
     </p>
     <div>
+    <div class="button-container">
       <button class="button play-again" id="playAgainBtn">Spela igen</button>
       <button class="button highscore-btn" id="showhighscoreBtn">Visa Highscore</button>
+      </div>
       <button class="button reset-btn" id="resetBtn">Börja om från början</button>
     </div>
     <div>

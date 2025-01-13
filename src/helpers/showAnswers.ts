@@ -56,7 +56,6 @@ export function showAnswers() {
 }
 
 function closeAnswers() {
-  console.log('click to close');
   if (showAnswersSection) {
     showAnswersSection.classList.add('hidden');
   }

@@ -20,6 +20,10 @@ export function selectedRadioBtn(event: Event): void {
 
   const selectedAnswer = inputElement.closest('.answer-option-label');
   selectedAnswer?.classList.add('choosen');
+  const nextQuestionBtn = document.querySelector('#nextQuestionBtn') as HTMLButtonElement;
+  if (nextQuestionBtn) {
+    nextQuestionBtn.disabled = false;
+  }
 }
 
 export function startPage() {

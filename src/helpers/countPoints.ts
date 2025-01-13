@@ -4,7 +4,6 @@ import { getCurrentPlayer } from './player';
 export function countPoints(selectedQuestions: IQuizQuestion[], questionIndex: number) {
   const player = getCurrentPlayer();
   if (!player) {
-    console.error('Ingen spelare är skapad.');
     return;
   }
 
@@ -19,6 +18,5 @@ export function countPoints(selectedQuestions: IQuizQuestion[], questionIndex: n
     } else {
       if (player) player.quizPoints--;
     }
-    console.log(`Poäng: ${player?.quizPoints}`);
   }
 }

@@ -43,7 +43,7 @@ export function renderQuestion(selectedQuestions: IQuizQuestion[], questionIndex
 
   const userBtn = `
     <div class="next-button-container">
-      <button class="button next-question-btn" id="nextQuestionBtn">NÄSTA FRÅGA</button>
+      <button class="button next-question-btn " id="nextQuestionBtn" disabled>NÄSTA FRÅGA</button>
     </div>
   `;
 
@@ -51,7 +51,8 @@ export function renderQuestion(selectedQuestions: IQuizQuestion[], questionIndex
 
   questionContainer!.innerHTML = questionHTML;
 
-  const nextQuestionBtn: HTMLButtonElement = document.querySelector('#nextQuestionBtn')!;
+const nextQuestionBtn: HTMLButtonElement = document.querySelector('#nextQuestionBtn')!;
+
   nextQuestionBtn.addEventListener('click', nextQuestion);
 
   const radioButtons = document.querySelectorAll('.answer-option');

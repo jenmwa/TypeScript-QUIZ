@@ -7,14 +7,19 @@ main {
   height: 77vh;
 }
 
-.question-container {
-  // min-height: 61vh;
-}
-
 .border {
   border-inline: 2px solid variables.$white;
 }
 
 .user-container {
   margin-top: 0rem;
+}
+
+.highscore {
+  display: flex;
+  place-items: center;
+}
+.container {
+  width: 50%;
+
 }

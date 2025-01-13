@@ -289,46 +289,75 @@ input[type='text'] {
 }
 
 .highscore {
-  display: block;
-  background-color: #f1dd35;
+  // display: block;
+  background-color: variables.$primary-color;
   position: fixed;
   top: 0;
   left: 0;
   min-height: 100vh;
   width: 100vw;
   z-index: 10;
-  color: variables.$dark;
+  color: variables.$white;
   display: flex;
   flex-direction: column;
-  padding-inline: 0;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+
 
   .container {
-    button {
-      background-color: #00273f;
-      color: #d6d3d3;
-    }
-    h4 {
-      color: #00273f;
-    }
-  }
-
-  ol {
-    padding: 0;
-
-    li {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-
-      span {
-        width: 33%;
-      }
-    }
-  }
-
-  .highscore-player {
+    padding: 2rem;;
     display: flex;
+    justify-content: end;
+    button {
+      background-color: variables.$dark;;
+      color: variables.$white;
+      margin: 2rem 0 0 2rem;
+    }
   }
+
+  h2 {
+    margin: 2rem;
+  }
+
+  .table-wrapper {
+    padding-inline: 2rem;
+  }
+
+  .highscore-table {
+   padding: 0;
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .highscore-table th, .highscore-table td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid variables.$dark;
+  }
+
+  .highscore-table td {
+    background-color: #00273f58;
+  }
+  
+  .highscore-table th {
+    background-color: variables.$dark;
+    color: variables.$white;
+
+
+    // &:nth-child(1) {
+    //   border-radius: 8px 0 0 0;
+    // }
+
+    // &:nth-child(4) {
+    //   border-radius: 0 8px 0 0;
+    // }
+  }
+  
+
+  // .highscore-player {
+  //   display: flex;
+  // }
 }
 
 .hidden {

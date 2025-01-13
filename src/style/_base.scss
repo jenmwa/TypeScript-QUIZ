@@ -306,6 +306,7 @@ input[type='text'] {
     padding: 2rem;
     display: flex;
     justify-content: end;
+
     button {
       background-color: variables.$dark;
       color: variables.$white;
@@ -342,6 +343,43 @@ input[type='text'] {
     background-color: variables.$dark;
     color: variables.$white;
   }
+}
+
+.answers-section {
+  background-color: variables.$dark;
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-height: 100vh;
+  width: 100vw;
+  z-index: 10;
+  color: variables.$white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0;
+
+  .answers-container {
+    // overflow-y: auto;
+    padding: 1rem;
+  }
+
+  .question-wrapper {
+    margin-top: 2rem;
+    border: 1px solid white;
+    border-radius: 8px;
+    padding: 1rem;
+  }
+
+  .button-container {
+    margin-block: 2rem;
+    display: flex;
+    justify-content: end;
+  }
+}
+
+.bold {
+  font-weight: bold;
 }
 
 .hidden {

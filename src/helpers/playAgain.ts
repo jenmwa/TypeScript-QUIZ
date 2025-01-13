@@ -27,6 +27,7 @@ export function playAgain() {
   const countdownElement = document.querySelector('#countdown');
   if (countdownElement) {
     countdownElement.classList.remove('hidden');
+      questionContainer?.classList.add('hidden')
   }
   startCountdown(selectedQuestions);
   startTimer();

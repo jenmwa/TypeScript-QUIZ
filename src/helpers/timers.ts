@@ -18,9 +18,11 @@ export function startCountdown(selectedQuestions: IQuizQuestion[]) {
 
     if (countdown === 0) {
       clearInterval(countdownInterval);
-
+      
       if (countdownElement) {
         countdownElement.classList.add('hidden');
+       
+
       }
 
       renderQuestion(selectedQuestions, 0);

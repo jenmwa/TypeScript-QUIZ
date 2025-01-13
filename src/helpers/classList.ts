@@ -8,6 +8,7 @@ import {
   gameSection,
   overviewContainer,
   progressBarContainer,
+
 } from '../main';
 
 export function selectedRadioBtn(event: Event): void {
@@ -32,9 +33,11 @@ export function startPage() {
 }
 
 export function playAgainPage() {
+
   endGameSection.classList.add('hidden');
   gameSection.classList.remove('hidden');
   userContainer.classList.add('hidden');
+
   playerPoints.innerHTML = '';
 }
 
@@ -45,6 +48,5 @@ export function questionPage() {
   progressBarContainer.classList.remove('hidden');
   const questionContainer = document.querySelector('#questionContainer')!;
   questionContainer.classList.remove('hidden');
-  const main = document.querySelector('#main');
-  main?.classList.add('border');
+
 }

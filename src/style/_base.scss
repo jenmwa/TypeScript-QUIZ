@@ -177,9 +177,11 @@ input[type='text'] {
 }
 
 .countdown {
+  padding-top: 10rem;
   font-size: 5rem;
   display: flex;
   justify-content: center;
+  align-items: center;
   font-weight: bold;
 }
 

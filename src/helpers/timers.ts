@@ -1,4 +1,4 @@
-import { playerNameSpan, progressBarContainer, timerDisplay } from '../main';
+import { main, playerNameSpan, progressBarContainer, timerDisplay } from '../main';
 import { IQuizQuestion } from '../models/IQuiz';
 import { playerName } from './checkNameInput';
 import { renderQuestion } from './renderQuestionHTML';
@@ -21,7 +21,7 @@ export function startCountdown(selectedQuestions: IQuizQuestion[]) {
       
       if (countdownElement) {
         countdownElement.classList.add('hidden');
-       
+       main.classList.add('border')
 
       }
 

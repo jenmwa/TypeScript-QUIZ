@@ -22,6 +22,8 @@ export const endGameSection = document.querySelector('#endGameSection')!;
 const highscoreBtn: HTMLButtonElement = document.querySelector('#highscoreBtn')!;
 const closeHighscoreBtn: HTMLButtonElement = document.querySelector('#closeHighscoreBtn')!;
 
+highscoreSection.classList.add('hidden');
+
 newGameBtn?.addEventListener('click', newGame);
 highscoreBtn?.addEventListener('click', showHighscore);
 closeHighscoreBtn?.addEventListener('click', closeHighscoreModule);

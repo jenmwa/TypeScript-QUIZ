@@ -1,4 +1,3 @@
-
 import { highscoreWrapper } from '../main';
 import { highscoreList } from './highscore';
 

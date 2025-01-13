@@ -213,7 +213,6 @@ input[type='text'] {
   display: flex;
   justify-content: end;
   margin-bottom: 2rem;
-
 }
 
 .user-name-container {
@@ -289,7 +288,6 @@ input[type='text'] {
 }
 
 .highscore {
-  // display: block;
   background-color: variables.$primary-color;
   position: fixed;
   top: 0;
@@ -304,13 +302,12 @@ input[type='text'] {
   margin: 0;
   padding: 0;
 
-
   .container {
-    padding: 2rem;;
+    padding: 2rem;
     display: flex;
     justify-content: end;
     button {
-      background-color: variables.$dark;;
+      background-color: variables.$dark;
       color: variables.$white;
       margin: 2rem 0 0 2rem;
     }
@@ -325,12 +322,13 @@ input[type='text'] {
   }
 
   .highscore-table {
-   padding: 0;
+    padding: 0;
     width: 100%;
     border-collapse: collapse;
   }
-  
-  .highscore-table th, .highscore-table td {
+
+  .highscore-table th,
+  .highscore-table td {
     padding: 10px;
     text-align: left;
     border: 1px solid variables.$dark;
@@ -339,25 +337,11 @@ input[type='text'] {
   .highscore-table td {
     background-color: #00273f58;
   }
-  
+
   .highscore-table th {
     background-color: variables.$dark;
     color: variables.$white;
-
-
-    // &:nth-child(1) {
-    //   border-radius: 8px 0 0 0;
-    // }
-
-    // &:nth-child(4) {
-    //   border-radius: 0 8px 0 0;
-    // }
   }
-  
-
-  // .highscore-player {
-  //   display: flex;
-  // }
 }
 
 .hidden {

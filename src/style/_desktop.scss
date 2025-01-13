@@ -2,7 +2,6 @@
 
 main {
   max-width: 600px;
-  // border: 2px solid variables.$white;
   padding-block: 0 2rem;
   height: 77vh;
 }
@@ -16,10 +15,8 @@ main {
 }
 
 .highscore {
-  display: flex;
   place-items: center;
 }
 .container {
   width: 50%;
-
 }

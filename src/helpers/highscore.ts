@@ -24,13 +24,20 @@ if (highscoreList.length === 0) {
 export function addHighscore(newPlayer: Player) {
   highscoreList.push(newPlayer);
 
-  highscoreList.sort((a, b) => b.quizPoints - a.quizPoints);
-  //lägg till OM samma score, snabbast är bättre
-  if (highscoreList.length > 10) {
-    highscoreList.pop();
-  }
+  highscoreList.sort((a, b) => {
+    if (b.quizPoints === a.quizPoints) {
+      return timeToSeconds(a.time) - timeToSeconds(b.time);
+    }
+
+    return b.quizPoints - a.quizPoints;
+  });
 
   saveHighscores();
+}
+
+function timeToSeconds(time: string): number {
+  const [hours, minutes, seconds] = time.split(':').map(Number); 
+  return (hours * 3600) + (minutes * 60) + seconds;
 }
 
 export function saveHighscores() {

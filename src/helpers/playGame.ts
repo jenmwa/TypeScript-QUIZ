@@ -23,6 +23,8 @@ export function playGame() {
   if (playGameContainer && userNameContainer) {
     playGameContainer.classList.add('hidden');
     userNameContainer.classList.add('hidden');
+    const countdown: HTMLDivElement = document.querySelector('#countdown')!;
+  countdown.classList.remove('hidden');
 
     selectedQuestions = getRandomQuestions(questions, totalQuestions);
     updateProgressBar();

@@ -20,13 +20,13 @@ export function newGame() {
       </div>
         <label>
           <span>Användarnamn:</span>
-          <div class="error-div"></div>
+          <div class="error-div small-text">Välj ett användarnamn på minst 3 tecken.</div>
           <input type="text" class="name-input" id="nameInput"></input>
         </label>
       </div>
-      <div id="countdown" class="countdown"></div>
-      <div id="questionContainer" class="question-container"></div>
-      <div id="playGameContainer">
+      <div id="countdown" class="countdown hidden"></div>
+      <div id="questionContainer" class="question-container hidden"></div>
+      <div id="playGameContainer" class="play-game-container">
         <button class="play-game-btn" id="playGameBtn" disabled>Starta spelet</button>
       </div>
 

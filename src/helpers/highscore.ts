@@ -2,6 +2,7 @@ import { highscoreSection } from '../main';
 import { highscoreMockData } from '../mock/highscoreMockData';
 import { Player } from '../models/Player';
 import { renderHighscoreSection } from './renderHighScoreHTML';
+import { timeToSeconds } from './timers';
 
 export function showHighscore() {
   highscoreSection?.classList.remove('hidden');
@@ -35,10 +36,6 @@ export function addHighscore(newPlayer: Player) {
   saveHighscores();
 }
 
-function timeToSeconds(time: string): number {
-  const [hours, minutes, seconds] = time.split(':').map(Number);
-  return hours * 3600 + minutes * 60 + seconds;
-}
 
 export function saveHighscores() {
   localStorage.setItem('highscoreList', JSON.stringify(highscoreList));

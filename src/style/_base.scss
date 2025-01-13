@@ -85,7 +85,7 @@ input[type='text'] {
 }
 
 //
-//
+// HEADER
 //
 
 .logo-container {
@@ -93,6 +93,48 @@ input[type='text'] {
   align-items: end;
   justify-content: center;
   margin-bottom: 2rem;
+}
+
+.quiz-word {
+  font-size: 2.5rem;
+  font-weight: 400;
+  line-height: 1;
+  padding-left: 0.3rem;
+  text-transform: uppercase;
+}
+
+//
+// SECTIONS
+//
+
+.user-container {
+  background-color: variables.$white;
+  color: variables.$dark;
+  display: flex;
+  justify-content: space-between;
+  padding-inline: variables.$padding-inline;
+  margin-top: -0.5rem;
+}
+
+.progress-bar-container {
+  max-width: 100%;
+  height: 10px;
+  background-color: variables.$white;
+  border-radius: 5px;
+  margin: 1rem 2rem;
+
+  .progress-bar {
+    height: 100%;
+    width: 0%;
+    background-color: variables.$primary-color;
+    border-radius: 5px;
+  }
+}
+
+.overview-container {
+  margin: variables.$padding-inline;
+  display: flex;
+  justify-content: space-between;
 }
 
 .start-section {
@@ -112,10 +154,26 @@ input[type='text'] {
   }
 }
 
-.overview-container {
-  margin: variables.$padding-inline;
-  display: flex;
-  justify-content: space-between;
+
+
+.question {
+  padding-bottom: 2rem;
+
+  label {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.code-block {
+  background-color: #201f21;
+  color: variables.$white;
+  padding: 15px;
+  border-radius: 5px;
+  overflow-x: auto;
+  font-family: monospace;
+  white-space: pre-wrap;
+  word-wrap: break-word;
 }
 
 .question-container {
@@ -123,6 +181,30 @@ input[type='text'] {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+.answers-container {
+  display: flex;
+  flex-direction: column;
+
+  label {
+    cursor: pointer;
+    padding: 0.5rem;
+    outline: 1px solid variables.$white;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+
+    &:hover {
+      background: #201f216a;
+      cursor: pointer;
+    }
+    &:active {
+      background: #0a0a0a;
+    }
+  }
+  label.choosen {
+    background: black;
+  }
 }
 
 .end-game-section {
@@ -150,30 +232,21 @@ input[type='text'] {
   }
 }
 
-.quiz-word {
-  font-size: 2.5rem;
-  font-weight: 400;
-  line-height: 1;
-  padding-left: 0.3rem;
-  text-transform: uppercase;
-}
+.user-name-container {
+  width: 100%;
 
-.user-container {
-  background-color: variables.$white;
-  color: variables.$dark;
-  display: flex;
-  justify-content: space-between;
-  padding-inline: variables.$padding-inline;
-  margin-top: -0.5rem;
-}
+  input {
+    margin-bottom: 2rem;
+  }
 
-.small-text {
-  font-size: small;
-}
+  .text-container {
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+  }
 
-.quiz-container {
-  margin: 0 auto;
-  padding-inline: variables.$padding-inline;
+  .play-game-container {
+   //testtest
+  }
 }
 
 .countdown {
@@ -184,6 +257,10 @@ input[type='text'] {
   align-items: center;
   font-weight: bold;
 }
+
+//
+// BUTTONS
+//
 
 .highscore-btn {
   background-color: variables.$white;
@@ -217,77 +294,15 @@ input[type='text'] {
   margin-bottom: 2rem;
 }
 
-.user-name-container {
-  width: 100%;
 
-  input {
-    margin-bottom: 2rem;
-  }
 
-  .text-container {
-    margin-top: 2rem;
-    // margin-bottom: 4rem;
-  }
-}
 
-.answers-container {
-  display: flex;
-  flex-direction: column;
 
-  label {
-    cursor: pointer;
-    padding: 0.5rem;
-    outline: 1px solid variables.$white;
-    border-radius: 4px;
-    margin-bottom: 1rem;
 
-    &:hover {
-      background: #201f216a;
-      cursor: pointer;
-    }
-    &:active {
-      background: #0a0a0a;
-    }
-  }
-  label.choosen {
-    background: black;
-  }
-}
 
-.question {
-  padding-bottom: 2rem;
-
-  label {
-    display: flex;
-    align-items: center;
-  }
-}
-
-.code-block {
-  background-color: #201f21;
-  color: variables.$white;
-  padding: 15px;
-  border-radius: 5px;
-  overflow-x: auto;
-  font-family: monospace;
-  white-space: pre-wrap;
-  word-wrap: break-word;
-}
-
-.progress-bar-container {
-  max-width: 100%;
-  height: 10px;
-  background-color: variables.$white;
-  border-radius: 5px;
-  margin: 1rem 2rem;
-
-  .progress-bar {
-    height: 100%;
-    width: 0%;
-    background-color: variables.$primary-color;
-    border-radius: 5px;
-  }
-}
+//
+// HIGHSCORE
+//
 
 .highscore {
   background-color: variables.$primary-color;
@@ -347,6 +362,10 @@ input[type='text'] {
   }
 }
 
+//
+// ANSWERSECTION
+//
+
 .answers-section {
   background-color: variables.$dark;
   position: absolute;
@@ -380,8 +399,16 @@ input[type='text'] {
   }
 }
 
+//
+// OVERALL
+//
+
 .bold {
   font-weight: bold;
+}
+
+.small-text {
+  font-size: small;
 }
 
 .hidden {

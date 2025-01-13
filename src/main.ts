@@ -17,7 +17,6 @@ export const highscoreWrapper: HTMLDivElement = document.querySelector('#highsco
 export const nextQuestionBtn: HTMLButtonElement = document.querySelector('#nextQuestionBtn')!;
 export const playerNameSpan: HTMLSpanElement = document.querySelector('#playerName')!;
 export const timerDisplay: HTMLSpanElement = document.querySelector('#timerDisplay')!;
-export const quizContainer = document.querySelector('#quiz-container')!;
 export const questionContainer = document.querySelector('#questionContainer')!;
 export const endGameSection = document.querySelector('#endGameSection')!;
 export const main = document.querySelector('#main')!;

@@ -1,44 +1,28 @@
-import { createCodeBlock } from './helpers/createCodeBlock';
-import { IQuizQuestion, questions } from './models/IInterface';
-import './style.scss';
+import { newGame } from './helpers/renderNewGameHTML';
+import { closeHighscoreModule, showHighscore } from './helpers/highscore';
+import './style/style.scss';
 
-function renderQuiz(questions: IQuizQuestion[]) {
-  const quizContainer = document.getElementById('quiz-container');
+export const totalQuestions = 10;
 
-  questions.forEach(question => {
-    const questionContainer = document.createElement('div');
-    questionContainer.classList.add('question');
+export const startSection: HTMLElement = document.querySelector('#startSection')!;
+export const userContainer: HTMLDivElement = document.querySelector('#userContainer')!;
+export const newGameBtn: HTMLButtonElement = document.querySelector('#newGameBtn')!;
+export const gameSection: HTMLElement = document.querySelector('#gameSection')!;
+export const highscoreSection: HTMLElement = document.querySelector('#highscoreSection')!;
+export const playerPoints: HTMLSpanElement = document.querySelector('#playerPoints')!;
+export const overviewContainer: HTMLDivElement = document.querySelector('#overviewContainer')!;
+export const progressBarContainer: HTMLDivElement = document.querySelector('#progressBarContainer')!;
+export const questionOverview: HTMLDivElement = document.querySelector('#questionOverview')!;
+export const highscoreWrapper: HTMLDivElement = document.querySelector('#highscoreWrapper')!;
+export const nextQuestionBtn: HTMLButtonElement = document.querySelector('#nextQuestionBtn')!;
+export const playerNameSpan: HTMLSpanElement = document.querySelector('#playerName')!;
+export const timerDisplay: HTMLSpanElement = document.querySelector('#timerDisplay')!;
+export const questionContainer = document.querySelector('#questionContainer')!;
+export const endGameSection = document.querySelector('#endGameSection')!;
+export const main = document.querySelector('#main')!;
+const highscoreBtn: HTMLButtonElement = document.querySelector('#highscoreBtn')!;
+const closeHighscoreBtn: HTMLButtonElement = document.querySelector('#closeHighscoreBtn')!;
 
-    let questionHTML = `
-      <p>${question.questionText}</p>
-    `;
-
-    if (question.codeExample) {
-      const codeBlock = createCodeBlock(question.codeExample);
-      questionHTML += codeBlock.outerHTML;
-    }
-
-    questionContainer.innerHTML = questionHTML;
-
-    const answersContainer = document.createElement('div');
-
-    [question.answer1, question.answer2, question.answer3].forEach((answer, index) => {
-      const answerHTML = `
-        <div class="answer-container">
-          <label for="answer-${index}">
-            <input type="radio" id="answer-${index}" class="answer-option" name="question-${question.id}">
-            ${answer.optionText}
-          </label>
-          <br>
-        </div>
-      `;
-
-      answersContainer.innerHTML += answerHTML;
-    });
-    questionContainer.appendChild(answersContainer);
-
-    quizContainer?.appendChild(questionContainer);
-  });
-}
-
-renderQuiz(questions);
+newGameBtn?.addEventListener('click', newGame);
+highscoreBtn?.addEventListener('click', showHighscore);
+closeHighscoreBtn?.addEventListener('click', closeHighscoreModule);

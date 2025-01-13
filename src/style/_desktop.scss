@@ -1,0 +1,30 @@
+@use 'variables';
+
+main {
+  max-width: 600px;
+  padding-block: 0 2rem;
+  height: 77vh;
+}
+
+.border {
+  border-inline: 2px solid variables.$white;
+}
+
+.user-container {
+  margin-top: 0rem;
+}
+
+.highscore {
+  place-items: center;
+}
+.container {
+  width: 50%;
+}
+.answers-section {
+  place-items: center;
+
+  .answers-container {
+    width: 50%;
+  }
+}
+

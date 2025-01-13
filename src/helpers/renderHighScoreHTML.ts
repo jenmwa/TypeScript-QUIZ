@@ -3,16 +3,21 @@ import { highscoreList } from './highscore';
 
 export function renderHighscoreSection() {
   highscoreContainer.innerHTML = '';
-  let highscoreHTML = '';
+
+  let highscoreHTML = `
+    <ol class="highscore-list">
+  `;
+
   highscoreList.forEach(player => {
     highscoreHTML += `
-      <div class="highscore-player">
-        <p>${player.playerName}</p>
-        <p>Score: ${player.quizPoints}</p>
-        <p>Time: ${player.time}</p>
-      </div>
+      <li class="highscore-player">
+        <span>${player.playerName}</span>
+        <span>Poäng: ${player.quizPoints}</span>
+        <span>Tid: ${player.time}</span>
+      </li>
     `;
   });
+  highscoreHTML += `</ol>`;
 
   highscoreContainer.innerHTML = highscoreHTML;
 }

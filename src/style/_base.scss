@@ -23,12 +23,13 @@ body {
 header {
   width: 100%;
   background-color: #3178c6;
-  padding-block: 2rem 1rem;
+  padding-block: 2rem 0rem;
 }
 
 main {
   width: 100%;
-  // min-height: 100vh;
+  min-height: 100%;
+  min-height: 80vh;
 }
 
 footer {
@@ -99,6 +100,10 @@ input[type='text'] {
   flex-direction: column;
   gap: 4rem;
 
+  .start-upper {
+    margin-top: 2rem;
+  }
+
   .start-below {
     .button-container {
       display: flex;
@@ -113,7 +118,6 @@ input[type='text'] {
   justify-content: space-between;
 }
 
-
 .question-container {
   min-height: 65vh;
   display: flex;
@@ -122,7 +126,28 @@ input[type='text'] {
 }
 
 .end-game-section {
-  height: 76vh;
+  min-height: 65vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-block: 2rem;
+
+  .congrats {
+    font-size: 3rem;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  .player-name {
+    text-transform: uppercase;
+    font-style: italic;
+    font-size: 2rem;
+    margin-inline: 0.75rem;
+  }
+  .button-container {
+    display: flex;
+    gap: 1rem;
+    margin-block: 6rem 3rem;
+  }
 }
 
 .quiz-word {
@@ -139,6 +164,7 @@ input[type='text'] {
   display: flex;
   justify-content: space-between;
   padding-inline: variables.$padding-inline;
+  margin-top: -0.5rem;
 }
 
 .small-text {
@@ -167,16 +193,27 @@ input[type='text'] {
   }
 }
 
+.tiertary-btn {
+  background-color: transparent;
+  border-bottom: 2px solid variables.$white;
+  border-radius: 0;
+  padding: 6px 4px;
+
+  &:hover {
+    background-color: transparent;
+  }
+}
+
+.show-answers-container {
+  margin-top: 2rem;
+}
+
 .next-button-container {
   width: 100%;
   display: flex;
   justify-content: end;
   margin-bottom: 2rem;
 
-  // .next-question-btn {
-  //   position: fixed;
-  //   bottom: 6rem;
-  // }
 }
 
 .user-name-container {
@@ -187,6 +224,7 @@ input[type='text'] {
   }
 
   .text-container {
+    margin-top: 2rem;
     // margin-bottom: 4rem;
   }
 }
@@ -259,22 +297,35 @@ input[type='text'] {
   min-height: 100vh;
   width: 100vw;
   z-index: 10;
-  color: #00273f;
+  color: variables.$dark;
   display: flex;
   flex-direction: column;
+  padding-inline: 0;
 
   .container {
-    padding: 2rem;
-    outline: 1px solid red;
-
     button {
       background-color: #00273f;
       color: #d6d3d3;
     }
-    h2 {
+    h4 {
       color: #00273f;
     }
   }
+
+  ol {
+    padding: 0;
+
+    li {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      span {
+        width: 33%;
+      }
+    }
+  }
+
   .highscore-player {
     display: flex;
   }

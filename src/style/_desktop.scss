@@ -4,14 +4,17 @@ main {
   max-width: 600px;
   // border: 2px solid variables.$white;
   padding-block: 0 2rem;
-  
+  height: 77vh;
 }
 
 .question-container {
-  min-height: 61vh;
-
+  // min-height: 61vh;
 }
 
 .border {
   border-inline: 2px solid variables.$white;
+}
+
+.user-container {
+  margin-top: 0rem;
 }

@@ -39,7 +39,7 @@ export function renderQuestion(selectedQuestions: IQuizQuestion[], questionIndex
       </label>
     `;
   });
-  optionsHTML += '</div>     </div>';
+  optionsHTML += '</div></div>';
 
   const userBtn = `
     <div class="next-button-container">

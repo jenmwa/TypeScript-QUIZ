@@ -44,7 +44,7 @@ export function questionPage() {
   overviewContainer.classList.remove('hidden');
   progressBarContainer.classList.remove('hidden');
   const questionContainer = document.querySelector('#questionContainer')!;
-  questionContainer.classList.remove('hidden')
+  questionContainer.classList.remove('hidden');
   const main = document.querySelector('#main');
-  main?.classList.add('border')
+  main?.classList.add('border');
 }

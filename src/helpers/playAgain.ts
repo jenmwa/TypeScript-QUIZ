@@ -4,10 +4,11 @@ import { resetPlayer } from './resetPlayer';
 import { resetTimer, startCountdown, startTimer } from './timers';
 import { playAgainPage } from './classList';
 import { selectedQuestions, setSelectedQuestions } from './playGame';
-import { questions } from '../models/IQuiz';
+
 import { getRandomQuestions } from './shuffleQuestionArray';
 import { updateProgressBar } from './updateProgressBar';
 import { totalQuestions } from '../main';
+import { questions } from '../data/quizQuestions';
 
 export function playAgain() {
   const player = getCurrentPlayer();

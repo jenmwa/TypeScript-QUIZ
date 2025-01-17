@@ -1,5 +1,6 @@
+import { questions } from '../data/quizQuestions';
 import { totalQuestions } from '../main';
-import { IQuizQuestion, questions } from '../models/IQuiz';
+import { IQuizQuestion } from '../models/IQuiz';
 import { playerName } from './checkNameInput';
 import { createNewPlayer } from './player';
 import { getRandomQuestions } from './shuffleQuestionArray';
